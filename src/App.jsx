@@ -2,7 +2,7 @@ import React from 'react'
 
 function App() {
   return (
-    <div>Wlelcome to my App 🍓🍓 </div>
+    <div>my appppp</div>
   )
 }
 
