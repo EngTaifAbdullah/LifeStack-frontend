@@ -64,7 +64,7 @@ function CertificateList() {
               <img 
                 src={courseraImage} 
                 alt="coursera" 
-               style={{ width: "100%", borderRadius: "8px", marginBottom: "10px" }}
+               style={{ width: "100%", borderRadius: "10px", marginBottom: "2px" }}
                />
 
               <h2>{cert.title}</h2>

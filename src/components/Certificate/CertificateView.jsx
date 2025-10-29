@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import api from "../../api/api";
+import courseraImage from "../../assets/coursera.png"
+
 
 // _________________________________________________________________________________________________________
 
@@ -49,6 +51,11 @@ function CertificateView() {
 
       <div className="cards-grid1" style={{ justifyContent: "start" }}>
         <div className="card1">
+          <img 
+             src={courseraImage} 
+             alt="coursera" 
+            style={{ width: "100%", borderRadius: "10px", marginBottom: "2px" }}
+          />
           <h2>{certificate.title}</h2>
           <p>Organization: {certificate.organization}</p>
           <p>Date Obtained: {certificate.date_obtained}</p>
