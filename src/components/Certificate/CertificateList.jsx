@@ -1,20 +1,29 @@
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
 import "../../App.css";
-import courseraImage from "../../assets/coursera.png"
 
-// _________________________________________________________________________________________________________
+import courseraImage from "../../assets/coursera.png";
+import awsImg from "../../assets/aws.png";
+import datacampImg from "../../assets/datacamp.png";
+
+
+
 
 function CertificateList() {
-
   const [certificates, setCertificates] = useState([]);
 
   useEffect(() => {
     fetchCertificates();
   }, []);
 
+  const getCertificateImage = (title) => {
+    const lower = title.toLowerCase();
+    if (lower.includes("coursera")) return courseraImage;
+    if (lower.includes("aws")) return awsImg;
+    if (lower.includes("datacamp")) return datacampImg;
+    return datacampImg; 
+  };
 
   const fetchCertificates = async () => {
     try {
@@ -36,49 +45,44 @@ function CertificateList() {
     }
   };
 
-  // _________________________________________________________________________________________________________
-
   return (
     <div className="main-content">
-
       <div className="main-header">
         <h1>All Achievements</h1>
       </div>
 
-
       <div>
-         <Link to="/certificate/new" className="add-btn">
+        <Link to="/certificate/new" className="add-btn">
           Add New Certificate
         </Link>
       </div>
 
-
       {certificates.length === 0 ? (
-        <p className="text-gray-500 text-center mt-10"> There are no Certificates yet </p>
+        <p className="text-gray-500 text-center mt-10">
+          There are no Certificates yet
+        </p>
       ) : (
-
-
         <div className="cards-grid">
           {certificates.map((cert) => (
             <div key={cert.id} className="card">
-              <img 
-                src={courseraImage} 
-                alt="coursera" 
-               style={{ width: "100%", borderRadius: "10px", marginBottom: "2px" }}
-               />
+              <img
+                src={getCertificateImage(cert.title)}
+                alt={cert.title}
+                style={{
+                  width: "100%",
+                  borderRadius: "10px",
+                  marginBottom: "2px",
+                }}
+              />
 
               <h2>{cert.title}</h2>
-              <p>Organization : {cert.organization}</p>
-              <p>Date Obtained {cert.date_obtained}</p>
-
-             {/* ____________________________________________________________________________ */}
+              <p>Organization: {cert.organization}</p>
+              <p>Date Obtained: {cert.date_obtained}</p>
 
               <div className="buttons">
                 <Link to={`/certificate/${cert.id}`} className="btn btn-view">
                   View
                 </Link>
-             {/* ____________________________________________________________________________ */}
-
               </div>
             </div>
           ))}
@@ -89,4 +93,3 @@ function CertificateList() {
 }
 
 export default CertificateList;
-
