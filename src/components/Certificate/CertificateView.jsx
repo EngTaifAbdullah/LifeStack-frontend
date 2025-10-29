@@ -73,7 +73,6 @@ function CertificateView() {
 
     return datacampImg; // defoult photo for all  new certificates
   };
-  
 // _________________________________________________________________________________________________________________________________
 
   const fetchCertificates = async () => {

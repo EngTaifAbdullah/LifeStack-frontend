@@ -2,6 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import api from "../../api/api";
 
+// _________________________________________________________________________________________________________________________________
+
+// All Certificate logo
+
+import identtyImg from "../../assets/identty.png";
+import gradImg from "../../assets/grad.png";
+import cvImg from "../../assets/cv.png";
+import passImg from "../../assets/pass.png";
+
 // _________________________________________________________________________________________________________
 
 function PersonalView() {
@@ -23,6 +32,23 @@ function PersonalView() {
     fetchPersonal();
   }, [docId]);
 
+
+// _________________________________________________________________________________________________________________________________
+
+  const getPersonalImage = (title) => {
+
+    const formatTitle = title.charAt(0).toUpperCase() + title.slice(1);
+
+    if (formatTitle.includes("Identty")) return identtyImg;
+    if (formatTitle.includes("Graduation")) return gradImg;
+    if (formatTitle.includes("My Resume")) return cvImg;
+    if (formatTitle.includes("Passport")) return passImg;
+
+
+    return identtyImg; // you must be gangeit taif !
+  };
+
+// _________________________________________________________________________________________________________________________________
 
   //Delete function
 
@@ -49,6 +75,16 @@ function PersonalView() {
 
       <div className="cards-grid1" style={{ justifyContent: "start" }}>
         <div className="card1">
+
+              <img
+                src={getPersonalImage(personal.title)}
+                alt={personal.title}
+                style={{
+                  width: "100%",
+                  borderRadius: "10px",
+                  marginBottom: "2px",
+                }}
+              />
           <h2>{personal.title}</h2>
 
           {personal.file && (

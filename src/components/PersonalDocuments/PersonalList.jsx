@@ -12,7 +12,6 @@ import gradImg from "../../assets/grad.png";
 import cvImg from "../../assets/cv.png";
 import passImg from "../../assets/pass.png";
 
-
 // _________________________________________________________________________________________________________
 
 function PersonalList() {
@@ -33,9 +32,6 @@ function PersonalList() {
     }
   };
 
-
-
-
 // _________________________________________________________________________________________________________________________________
 
   const getPersonalImage = (title) => {
@@ -48,14 +44,8 @@ function PersonalList() {
     if (formatTitle.includes("Passport")) return passImg;
 
 
-    return identtyImg; // defoult photo for all  new certificates
+    return identtyImg; // you must be gangeit taif !
   };
-
-
-
-
-
-
 
 // _________________________________________________________________________________________________________________________________
 
@@ -69,7 +59,6 @@ function PersonalList() {
       }
     }
   };
-
   // _________________________________________________________________________________________________________
 
   return (
