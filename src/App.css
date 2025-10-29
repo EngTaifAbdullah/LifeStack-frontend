@@ -101,7 +101,7 @@ a {
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: #767777;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -116,13 +116,13 @@ a {
 
 .card h2 {
   font-size: 1.1rem;
-  color: #111827;
+  color: #000000;
   margin-bottom: 8px;
 }
 
 .card p {
   font-size: 0.9rem;
-  color: #555;
+  color: #ffffff;
   margin-bottom: 6px;
 }
 

@@ -2,11 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
 import "../../App.css";
+// _________________________________________________________________________________________________________________________________
+// All Certificate
 
 import courseraImage from "../../assets/coursera.png";
 import awsImg from "../../assets/aws.png";
 import datacampImg from "../../assets/datacamp.png";
+import codeacadimyImg from "../../assets/codeacadimy.png";
+import cyperAnaImg from "../../assets/cyperAna.png";
+import cyperhubImg from "../../assets/cyperhub.png";
 
+
+// _________________________________________________________________________________________________________________________________
 
 
 
@@ -17,11 +24,20 @@ function CertificateList() {
     fetchCertificates();
   }, []);
 
+  // _________________________________________________________________________________________________________________________________
+
   const getCertificateImage = (title) => {
-    const lower = title.toLowerCase();
-    if (lower.includes("coursera")) return courseraImage;
-    if (lower.includes("aws")) return awsImg;
-    if (lower.includes("datacamp")) return datacampImg;
+
+
+    const formatTitle = title.charAt(0).toUpperCase() + title.slice(1);
+
+    if (formatTitle.includes("Coursera")) return courseraImage;
+    if (formatTitle.includes("Aws")) return awsImg;
+    if (formatTitle.includes("Datacamp")) return datacampImg;
+    if (formatTitle.includes("Codeacadimy")) return codeacadimyImg;
+    if (formatTitle.includes("CyperAna")) return cyperAnaImg;
+    if (formatTitle.includes("CyperHub")) return cyperhubImg;
+
     return datacampImg; 
   };
 
