@@ -12,7 +12,7 @@ function NavBar() {
 
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/personal-documents">Personal Document</Link>
+        <Link to="/personal">Personal Document</Link>
         <Link to="/certificate">Certificate</Link>
         <Link to="/future-goals">Future Goals</Link>
       </nav>

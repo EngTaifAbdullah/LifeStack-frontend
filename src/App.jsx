@@ -11,6 +11,7 @@ import CertificateView from "./components/Certificate/CertificateView";
 
 import PersonalForm from "./components/PersonalDocuments/PersonalForm";
 import PersonalList from "./components/PersonalDocuments/PersonalList";
+import PersonalView from "./components/PersonalDocuments/PersonalView";
 
 import './App.css'
 
@@ -29,6 +30,8 @@ function App() {
         <Route path="/personal" element={<PersonalList />} />
         <Route path="/personal/new" element={<PersonalForm />} />
         <Route path="/personal/:docId/edit" element={<PersonalForm />} />
+        <Route path="/personal/:docId" element={<PersonalView />} />
+
       </Routes>
     </Router>
   );
