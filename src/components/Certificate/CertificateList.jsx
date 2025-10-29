@@ -59,7 +59,7 @@ function CertificateList() {
     if (formatTitle.includes("Python")) return pythonImg;
     if (formatTitle.includes("Udemy")) return udemyImg;
 
-    return datacampImg; // defoult photo for all  new certificates
+    return ibmImg; // defoult photo for all  new certificates
   };
 
   const fetchCertificates = async () => {

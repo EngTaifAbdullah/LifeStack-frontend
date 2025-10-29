@@ -3,6 +3,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
 import "../../App.css";
+// _________________________________________________________________________________________________________________________________
+
+// All Certificate logo
+
+import identtyImg from "../../assets/identty.png";
+import gradImg from "../../assets/grad.png";
+import cvImg from "../../assets/cv.png";
+import passImg from "../../assets/pass.png";
+
 
 // _________________________________________________________________________________________________________
 
@@ -23,6 +32,32 @@ function PersonalList() {
       console.error("Error fetching personal:", error);
     }
   };
+
+
+
+
+// _________________________________________________________________________________________________________________________________
+
+  const getPersonalImage = (title) => {
+
+    const formatTitle = title.charAt(0).toUpperCase() + title.slice(1);
+
+    if (formatTitle.includes("Identty")) return identtyImg;
+    if (formatTitle.includes("Graduation")) return gradImg;
+    if (formatTitle.includes("My Resume")) return cvImg;
+    if (formatTitle.includes("Passport")) return passImg;
+
+
+    return identtyImg; // defoult photo for all  new certificates
+  };
+
+
+
+
+
+
+
+// _________________________________________________________________________________________________________________________________
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this personal?")) {
@@ -60,6 +95,17 @@ function PersonalList() {
         <div className="cards-grid">
           {personal.map((doc) => (
             <div key={doc.id} className="card">
+
+              <img
+                src={getPersonalImage(doc.title)}
+                alt={doc.title}
+                style={{
+                  width: "100%",
+                  borderRadius: "10px",
+                  marginBottom: "2px",
+                }}
+              />
+
               <h2>{doc.title}</h2>
 
              {/* ____________________________________________________________________________ */}
