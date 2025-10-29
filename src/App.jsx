@@ -9,6 +9,8 @@ import CertificateForm from "./components/Certificate/CertificateForm";
 import CertificateList from "./components/Certificate/CertificateList";
 import CertificateView from "./components/Certificate/CertificateView";
 
+import PersonalForm from "./components/PersonalDocuments/PersonalForm";
+
 import './App.css'
 
 
@@ -22,6 +24,9 @@ function App() {
         <Route path="/certificate/new" element={<CertificateForm />} />
         <Route path="/certificate/:certId/edit" element={<CertificateForm />} />
         <Route path="/certificate/:certId" element={<CertificateView />} />
+
+        <Route path="/personal/new" element={<PersonalForm />} />
+        <Route path="/personal/:docId/edit" element={<PersonalForm />} />
       </Routes>
     </Router>
   );
