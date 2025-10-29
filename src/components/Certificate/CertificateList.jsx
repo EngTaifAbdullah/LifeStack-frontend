@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
 import "../../App.css";
+import courseraImage from "../../assets/coursera.png"
 
 // _________________________________________________________________________________________________________
 
@@ -60,6 +61,12 @@ function CertificateList() {
         <div className="cards-grid">
           {certificates.map((cert) => (
             <div key={cert.id} className="card">
+              <img 
+                src={courseraImage} 
+                alt="coursera" 
+               style={{ width: "100%", borderRadius: "8px", marginBottom: "10px" }}
+               />
+
               <h2>{cert.title}</h2>
               <p>Organization : {cert.organization}</p>
               <p>Date Obtained {cert.date_obtained}</p>

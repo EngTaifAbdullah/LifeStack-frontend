@@ -2,7 +2,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavBar/NavBar";
-
 import Home from "./components/Home/HomePage";
 
 import CertificateForm from "./components/Certificate/CertificateForm";
@@ -14,6 +13,8 @@ import PersonalList from "./components/PersonalDocuments/PersonalList";
 import PersonalView from "./components/PersonalDocuments/PersonalView";
 
 import './App.css'
+
+
 
 
 function App() {
