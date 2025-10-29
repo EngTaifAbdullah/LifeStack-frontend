@@ -70,7 +70,7 @@ function CertificateList() {
       console.error("Error fetching certificates:", error);
     }
   };
-
+// _________________________________________________________________________________________________________________________________
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this certificate?")) {
