@@ -1,4 +1,4 @@
-// src/components/Certificate/CertificateList.jsx
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api/api";
@@ -70,19 +70,6 @@ function CertificateList() {
                 <Link to={`/certificate/${cert.id}`} className="btn btn-view">
                   View
                 </Link>
-             {/* ____________________________________________________________________________ */}
-
-                <Link to={`/certificate/${cert.id}/edit`} className="btn btn-edit">
-                  Edit
-                </Link>
-             {/* ____________________________________________________________________________ */}
-
-                <button
-                  onClick={() => handleDelete(cert.id)}
-                  className="btn btn-delete"
-                >
-                  Delete
-                </button>
              {/* ____________________________________________________________________________ */}
 
               </div>
