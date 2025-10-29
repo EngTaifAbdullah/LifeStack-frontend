@@ -22,7 +22,7 @@ function PersonalForm() {
 
   useEffect(() => {
     if (docId) {
-      getCertificate();
+      getPersonal();
     }
   }, [docId]);
 
