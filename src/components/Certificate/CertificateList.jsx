@@ -16,7 +16,6 @@ function CertificateList() {
 
 
   const fetchCertificates = async () => {
-
     try {
       const response = await api.get("/certificate/");
       setCertificates(response.data);
@@ -25,10 +24,8 @@ function CertificateList() {
     }
   };
 
-
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this certificate?")) {
-
       try {
         await api.delete(`/certificate/${id}/`);
         fetchCertificates();
@@ -38,14 +35,18 @@ function CertificateList() {
     }
   };
 
-// _________________________________________________________________________________________________________
+  // _________________________________________________________________________________________________________
 
   return (
     <div className="main-content">
-      <div className="main-header">
 
+      <div className="main-header">
         <h1>All Achievements</h1>
-        <Link to="/certificate/new" className="add-btn">
+      </div>
+
+
+      <div>
+         <Link to="/certificate/new" className="add-btn">
           Add New Certificate
         </Link>
       </div>
@@ -54,6 +55,7 @@ function CertificateList() {
       {certificates.length === 0 ? (
         <p className="text-gray-500 text-center mt-10"> There are no Certificates yet </p>
       ) : (
+
 
         <div className="cards-grid">
           {certificates.map((cert) => (
@@ -93,3 +95,4 @@ function CertificateList() {
 }
 
 export default CertificateList;
+

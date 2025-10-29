@@ -89,7 +89,7 @@ function CertificateForm() {
 
       if (certId) {
       
-        await api.patch(`/certificate/${certId}/`, data, {     //  edite certificate
+        await api.put(`/certificate/${certId}/`, data, {     //  edite certificate
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Certificate has Edit Successfully");  //message

@@ -6,7 +6,9 @@ import CertificateForm from "./components/Certificate/CertificateForm";
 import CertificateList from "./components/Certificate/CertificateList";
 import CertificateView from "./components/Certificate/CertificateView";
 
-// import './App.css'
+import './App.css'
+
+
 
 function App() {
   return (
