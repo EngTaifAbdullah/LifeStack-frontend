@@ -92,7 +92,7 @@ function CertificateForm() {
         await api.put(`/certificate/${certId}/`, data, {     //  edite certificate
           headers: { "Content-Type": "multipart/form-data" },
         });
-        alert("Certificate has Edit Successfully");  //message
+        alert("Certificate has Edit Successfully ✅");  //message
       } 
       
       else {
@@ -100,7 +100,7 @@ function CertificateForm() {
         await api.post("/certificate/", data, {      // to add new certificate
           headers: { "Content-Type": "multipart/form-data" },
         });
-        alert("Certificate has Added Successfully");
+        alert("Certificate has Added Successfully ✅");
       }
 
 

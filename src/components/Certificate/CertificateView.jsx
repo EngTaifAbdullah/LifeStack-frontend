@@ -27,16 +27,16 @@ function CertificateView() {
   //Delete function
 
   const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this certificate?")) {     // here i added delete confermation to ask you before deleteing
+    if (window.confirm("Are you sure you want to delete this certificate ❗️")) {     // here i added delete confermation to ask you before deleteing
 
       try {
         await api.delete(`/certificate/${id}/`);
-        alert("Certificate deleted successfully!");
+        alert("Certificate Deleted Successfully ✅");
         navigate("/certificate"); 
       
       } catch (error) {
-        console.error("Error deleting certificate:", error);
-        alert("Failed to delete certificate!");
+        console.error("Error Deleting Certificate:", error);
+        alert("Failed to Delete Certificate!");
       }
     }
   };
@@ -59,7 +59,7 @@ function CertificateView() {
                 href={`http://127.0.0.1:8000${certificate.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-view"
+                className="btn btn-viewFile"
                 style={{ display: "inline-block", marginTop: "10px" }}
               >
                 View File
@@ -73,11 +73,6 @@ function CertificateView() {
               Edit
             </Link>
           {/* ____________________________________________________________________________ */}
-            <Link to="/certificate" className="btn btn-delete">
-              Back
-            </Link>
-
-          {/* ____________________________________________________________________________ */}
             <button
               onClick={() => handleDelete(certificate.id)}
               className="btn btn-delete"
@@ -85,6 +80,11 @@ function CertificateView() {
               Delete
             </button>
           {/* ____________________________________________________________________________ */}
+            <Link to="/certificate" className="btn btn-back">
+              Back
+            </Link>
+          {/* ____________________________________________________________________________ */}
+
           </div>
         </div>
       </div>
