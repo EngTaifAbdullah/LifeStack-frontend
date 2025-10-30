@@ -4,7 +4,7 @@ import api from "../../api/api";
 
 // _________________________________________________________________________________________________________________________________
 
-// All Certificate logo
+// All Certificate I want to import it
 
 import identtyImg from "../../assets/identty.png";
 import gradImg from "../../assets/grad.png";
@@ -32,7 +32,6 @@ function PersonalView() {
     fetchPersonal();
   }, [docId]);
 
-
 // _________________________________________________________________________________________________________________________________
 
   const getPersonalImage = (title) => {
@@ -47,7 +46,6 @@ function PersonalView() {
 
     return identtyImg; // you must be gangeit taif !
   };
-
 // _________________________________________________________________________________________________________________________________
 
   //Delete function

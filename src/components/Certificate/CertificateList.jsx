@@ -4,7 +4,7 @@ import api from "../../api/api";
 import "../../App.css";
 // _________________________________________________________________________________________________________________________________
 
-// All Certificate logo
+// All Certificate I want to import it
 
 import courseraImage from "../../assets/coursera.png";
 import awsImg from "../../assets/aws.png";
@@ -59,7 +59,7 @@ function CertificateList() {
     if (formatTitle.includes("Python")) return pythonImg;
     if (formatTitle.includes("Udemy")) return udemyImg;
 
-    return ibmImg; // defoult photo for all  new certificates
+    return ibmImg; // Generate default photo for all  new certificates
   };
 
   const fetchCertificates = async () => {

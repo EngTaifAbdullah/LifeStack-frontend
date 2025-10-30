@@ -5,7 +5,7 @@ import api from "../../api/api";
 import "../../App.css";
 // _________________________________________________________________________________________________________________________________
 
-// All Certificate logo
+// All Certificate I want to import it
 
 import identtyImg from "../../assets/identty.png";
 import gradImg from "../../assets/grad.png";
