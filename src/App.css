@@ -135,8 +135,8 @@ a {
   display: flex;             
   justify-content: center;      
   align-items: center;         
-  min-height: 1vh;             /* ارتفاع الحاوية 
-  padding: 20px;                /* حشو داخلي للحاوية */
+  min-height: 1vh;             
+  padding: 20px;               
   box-sizing: border-box;
 }
 
@@ -153,6 +153,43 @@ a {
 .card1:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================== Grid Three ================================== */
+
+.cards-grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 45px; 
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.card {
+  background-color: #767777;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 95%; 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card h1 {
+  font-size: 1.7rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 6px;
 }
 
 /* ================================== Certificate View  ================================== */

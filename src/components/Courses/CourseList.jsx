@@ -60,13 +60,12 @@ function CourseList() {
           There are no courses yet.
         </p>
       ) : (
-        <div className="cards-grid">
+        <div className="cards-grid3">
           {courses.map((course) => (
 
             <div key={course.id} className="card">
 
-              <h2>{course.title}</h2>
-              <p><strong>Provider:</strong> {course.provider}</p>
+              <h1>{course.title}</h1>
               <p className="description">{course.description}</p>
               <p className="category">
               <p><strong>Category:</strong> {course.category?.category_type || course.category || "—"}</p>
