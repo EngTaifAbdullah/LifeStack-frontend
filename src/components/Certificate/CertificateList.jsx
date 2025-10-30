@@ -7,6 +7,7 @@ import "../../App.css";
 // All Certificate I want to import it
 
 import courseraImage from "../../assets/coursera.png";
+import futureLearnImg from "../../assets/futureLearn.png";
 import awsImg from "../../assets/aws.png";
 import datacampImg from "../../assets/datacamp.png";
 import codeacadimyImg from "../../assets/codeacadimy.png";
@@ -15,7 +16,6 @@ import cyperhubImg from "../../assets/cyperhub.png";
 import dorobImg from "../../assets/dorob.png";
 import edrakImg from "../../assets/edrak.png";
 import edxImg from "../../assets/edx.png";
-import futureLearnImg from "../../assets/futureLearn.png";
 import googedigitalImg from "../../assets/googedigital.png";
 import googleImg from "../../assets/google.png";
 import hopespotImg from "../../assets/hopespot.png";
@@ -41,6 +41,7 @@ function CertificateList() {
     const formatTitle = title.charAt(0).toUpperCase() + title.slice(1);
 
     if (formatTitle.includes("Coursera")) return courseraImage;
+    if (formatTitle.includes("FutureLearn")) return futureLearnImg;
     if (formatTitle.includes("Aws")) return awsImg;
     if (formatTitle.includes("DataCamp")) return datacampImg;
     if (formatTitle.includes("CodeAcadimy")) return codeacadimyImg;
@@ -49,7 +50,6 @@ function CertificateList() {
     if (formatTitle.includes("Doroob")) return dorobImg;
     if (formatTitle.includes("Edrak")) return edrakImg;
     if (formatTitle.includes("Edx")) return edxImg;
-    if (formatTitle.includes("FutureLearn")) return futureLearnImg;
     if (formatTitle.includes("Google Digital")) return googedigitalImg;
     if (formatTitle.includes("Google")) return googleImg;
     if (formatTitle.includes("HubeSpot")) return hopespotImg;
