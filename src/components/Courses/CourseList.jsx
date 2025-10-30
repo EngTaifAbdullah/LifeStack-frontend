@@ -69,7 +69,7 @@ function CourseList() {
               <p><strong>Provider:</strong> {course.provider}</p>
               <p className="description">{course.description}</p>
               <p className="category">
-                <strong>Category:</strong> {course.category?.category_type || "—"}
+              <p><strong>Category:</strong> {course.category?.category_type || course.category || "—"}</p>
               </p>
 
 

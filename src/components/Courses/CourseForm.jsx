@@ -107,7 +107,6 @@ function CourseForm() {
             type="text"
             value={provider}
             onChange={(e) => setProvider(e.target.value)}
-            required
           />
 
 
