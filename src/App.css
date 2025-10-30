@@ -13,9 +13,9 @@ a {
 
 .top-menu {
   width: 100%;
-  height: 70px;
+  height: 90px;
   background-color: #e157c8;
-  display: flex;
+  display: list-item;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
@@ -42,7 +42,7 @@ a {
   color: white;
   font-weight: 500;
   padding: 8px 14px;
-  border-radius: 6px;
+  border-radius: 20px;
   transition: background-color 0.2s;
 }
 
