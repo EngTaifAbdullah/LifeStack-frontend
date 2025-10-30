@@ -26,7 +26,7 @@ function PersonalView() {
         const response = await api.get(`/personal/${docId}/`);
         setPersonal(response.data);
       } catch (error) {
-        console.error("Error fetching certificate:", error);
+        console.error("Error fetching Personal Document:", error);
       }
     };
     fetchPersonal();
@@ -51,16 +51,16 @@ function PersonalView() {
   //Delete function
 
   const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this certificate ❗️")) {     // here i added delete confermation to ask you before deleteing
+    if (window.confirm("Are you sure you want to delete this Documents ❓")) {     // here i added delete confermation to ask you before deleteing
 
       try {
         await api.delete(`/personal/${id}/`);
-        alert("Certificate Deleted Successfully ✅");
+        alert("Document Deleted Successfully ✅");
         navigate("/personal"); 
       
       } catch (error) {
-        console.error("Error Deleting Certificate:", error);
-        alert("Failed to Delete Certificate!");
+        console.error("Error Deleting Document:", error);
+        alert("Failed to Delete Document!");
       }
     }
   };
@@ -69,7 +69,7 @@ function PersonalView() {
 
   return (
     <div className="main-content">
-      <h1>Certificate Details</h1>
+      <h1>Personal Documents Details</h1>
 
       <div className="cards-grid1" style={{ justifyContent: "start" }}>
         <div className="card1">

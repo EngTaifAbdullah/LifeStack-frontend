@@ -4,20 +4,24 @@ import "../../App.css";
 
 // _________________________________________________________________________________________________________
 
+// this code i tacke it from my portofilo in first project
+
 function NavBar() {
+
   const [darkMode, setDarkMode] = useState(false);
 
-  // حفظ الوضع الحالي في localStorage
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode") === "true";
     setDarkMode(savedMode);
   }, []);
 
-  // تطبيق الوضع على الصفحة
+
   useEffect(() => {
     document.body.classList.toggle("dark-mode", darkMode);
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
+
+  // _________________________________________________________________________________________________________
 
   return (
     <header className="top-menu">
@@ -26,10 +30,10 @@ function NavBar() {
       <nav>
         <Link to="/">Home</Link>
         <Link to="/personal">Personal Document</Link>
-        <Link to="/certificate">Certificate</Link>
+        <Link to="/certificate">Certificates</Link>
         <Link to="/courses">Future Goals</Link>
 
-        {/* زر تبديل الوضع */}
+
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="mode-toggle"

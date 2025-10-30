@@ -5,7 +5,7 @@ import api from "../../api/api";
 import "../../App.css";
 // _________________________________________________________________________________________________________________________________
 
-// All Certificate I want to import it
+// All Personal Document I want to import it 
 
 import identtyImg from "../../assets/identty.png";
 import gradImg from "../../assets/grad.png";
@@ -28,11 +28,13 @@ function PersonalList() {
       const response = await api.get("/personal/");
       setPersonal(response.data);
     } catch (error) {
-      console.error("Error fetching personal:", error);
+      console.error("Error fetching Personal Document:", error);
     }
   };
 
 // _________________________________________________________________________________________________________________________________
+
+// static images 
 
   const getPersonalImage = (title) => {
 
@@ -50,12 +52,12 @@ function PersonalList() {
 // _________________________________________________________________________________________________________________________________
 
   const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this personal?")) {
+    if (window.confirm("Are you sure you want to delete this Document ❓")) {
       try {
         await api.delete(`/personal/${id}/`);
         fetchPersonal();
       } catch (error) {
-        console.error("Error deleting personal:", error);
+        console.error("Error Deleting Document:", error);
       }
     }
   };
@@ -65,13 +67,13 @@ function PersonalList() {
     <div className="main-content">
 
       <div className="main-header">
-        <h1>All personal</h1>
+        <h1>My Personal Documents</h1>
       </div>
 
 
       <div>
          <Link to="/personal/new" className="add-btn">
-          Add New DOC
+          Add Personal Document
         </Link>
       </div>
 

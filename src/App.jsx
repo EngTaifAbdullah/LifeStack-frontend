@@ -14,10 +14,8 @@ import PersonalView from "./components/PersonalDocuments/PersonalView";
 
 import CourseForm from "./components/Courses/CourseForm";
 import CourseList from "./components/Courses/CourseList";
-// import CourseView from "./components/Courses/CourseView";
 
 import './App.css'
-
 
 
 function App() {
@@ -37,15 +35,9 @@ function App() {
         <Route path="/personal/:docId/edit" element={<PersonalForm />} />
         <Route path="/personal/:docId" element={<PersonalView />} />
 
-        {/* <Route path="/courses" element={<CourseList />} />
+        <Route path="/courses" element={<CourseList />} />
         <Route path="/courses/new" element={<CourseForm />} />
-        <Route path="/courses/:courseId/edit" element={<CourseForm />} /> */}
-
-       <Route path="/courses" element={<CourseList />} />
-       <Route path="/courses/new" element={<CourseForm />} />
-       {/* <Route path="/courses/:courseId" element={<CourseView />} /> */}
-       <Route path="/courses/:courseId/edit" element={<CourseForm />} />
-
+        <Route path="/courses/:courseId/edit" element={<CourseForm />} />
 
       </Routes>
     </Router>

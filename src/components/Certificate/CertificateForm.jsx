@@ -43,7 +43,7 @@ function CertificateForm() {
         file: null, 
       });
 
-      setFileName(response.data.file ? response.data.file.split("/").pop() : "");
+      setFileName(response.data.file ? response.data.file.split("/").pop() : "");   //upload file function
       setExistingFileUrl(response.data.file || ""); 
       
     } catch (error) {
@@ -79,8 +79,9 @@ function CertificateForm() {
     data.append("date_obtained", formData.date_obtained);
     data.append("user", 1); // to pass the user id
 
-    // if the user want to update the privios file do it ! if not..dont do anything
 
+    // if the user want to update the privios file do it ! if not..dont do anything
+    
     if (formData.file) {
       data.append("file", formData.file);
     }

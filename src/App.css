@@ -172,17 +172,6 @@ a {
   margin-bottom: 6px;
 }
 
-/* ================================== Footer ================================== */
-
-footer {
-  background: linear-gradient(90deg, #b947ac, #8a2e85);
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  border-radius: 15px 15px 0 0;
-  font-size: 0.9rem;
-}
-
 /* ================================== Animations ================================== */
 
 @keyframes fadeIn {
@@ -195,8 +184,7 @@ footer {
     transform: translateY(0);
   }
 }
-
-/* ================================== Dark Mode ================================== */
+/* ================================== Dark Mod ================================== */
 
 .dark-mode {
   background-color: #2a2a2a;
@@ -422,7 +410,66 @@ footer {
 
 .home-info ul li {
   margin-bottom: 10px;
+
+}/* ================================== Filter Styles ================================== */
+
+.filter-container {
+  margin-left: auto;
+}
+
+.filter-select {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid (145deg, #ff9cc4, #ba338d);
+  background: linear-gradient(145deg, #ff9cc4, #ba338d);
+  font-size: 15px;
+  font-weight: 500;
+  color: #060606;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.filter-select:hover {
+  border-color: #65135b;
+  box-shadow: 0 4px 12px rgba(225, 87, 200, 0.25);
+  transform: translateY(-2px);
+}
+
+.filter-select:focus {
+  border-color: #65135b;
+  box-shadow: 0 0 12px rgba(225, 87, 200, 0.35);
 }
 
 
+.filter-select::-ms-expand {
+  display: none;
+}
 
+/* ================================== Card Animation ================================== */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* ================================== Responsive Header ================================== */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+/* ======================================================================================= */

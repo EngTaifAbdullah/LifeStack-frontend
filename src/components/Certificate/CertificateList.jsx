@@ -88,7 +88,7 @@ function CertificateList() {
   return (
     <div className="main-content">
       <div className="main-header">
-        <h1>All Achievements</h1>
+        <h1>My Achievements </h1>
       </div>
 
 

@@ -4,7 +4,7 @@ import api from "../../api/api";
 
 // _________________________________________________________________________________________________________________________________
 
-// All Certificate logo
+// All Certificate I want to import it by default
 
 import courseraImage from "../../assets/coursera.png";
 import awsImg from "../../assets/aws.png";
@@ -85,10 +85,10 @@ function CertificateView() {
   };
 // _________________________________________________________________________________________________________________________________
 
-  //Delete function
+  // Delete function
 
   const handleDelete = async (id) => {
-    if (window.confirm("Are you sure you want to delete this certificate ❗️")) {     // here i added delete confermation to ask you before deleteing
+    if (window.confirm("Are you sure you want to delete this certificate ❓")) {     // here i added delete confermation to ask you before deleteing
 
       try {
         await api.delete(`/certificate/${id}/`);

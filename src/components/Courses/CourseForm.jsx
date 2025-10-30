@@ -12,7 +12,7 @@ function CourseForm() {
 
 // All required fileds
   const [title, setTitle] = useState("");
-  const [provider, setProvider] = useState("");
+  const [provider, setProvider] = useState("");   //i put it this filed it sis not require
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState([]);
@@ -27,7 +27,7 @@ function CourseForm() {
   }, [courseId]);
 
 
-  // Get categories from backend
+  // Get categories from backend to display it as dropdowen list
   const fetchCategories = async () => {
 
     try {
@@ -49,7 +49,7 @@ function CourseForm() {
       setTitle(course.title);
       setProvider(course.provider);
       setDescription(course.description);
-      setCategory(course.category?.id || ""); //by id
+      setCategory(course.category?.id || ""); // by id
 
     } catch (error) {
       console.error("Error fetching course:", error);
@@ -79,7 +79,7 @@ function CourseForm() {
       }
       navigate("/courses");
     } catch (error) {
-      console.error("Error saving course:", error.response?.data || error);
+      console.error("Error saving Goals:", error.response?.data || error);
       alert("Error Saving Goles ");
     }
   };
@@ -92,7 +92,7 @@ function CourseForm() {
         <h1>{courseId ? "Edit Course" : "Add New Course"}</h1>
 
         <form onSubmit={handleSubmit} className="form-card">
-          <label>Title</label>
+          <label>Goal Title</label>
 
           <input
             type="text"
@@ -101,7 +101,7 @@ function CourseForm() {
             required
           />
 
-
+          {/* i remove (required) so this feled it is optional */}
           <label>Provider</label>
           <input
             type="text"
@@ -117,13 +117,14 @@ function CourseForm() {
           />
 
 
+          {/* as dropdown list */}
           <label>Category</label>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             required
           >
-            <option value="">Select category</option>
+            <option value="">Select Category</option>
             {categories.map((cat) => (
               <option key={cat.id} value={cat.id}>
                 {cat.category_type}

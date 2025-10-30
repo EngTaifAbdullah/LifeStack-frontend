@@ -71,7 +71,8 @@ function PersonalForm() {
     
     const data = new FormData();
     data.append("title", formData.title);
-    data.append("user", 1); // to pass the user id
+    data.append("user", 1);   // to pass the user id
+
 
     // if the user want to update the privios file do it ! if not..dont do anything
 
@@ -86,21 +87,21 @@ function PersonalForm() {
         await api.put(`/personal/${docId}/`, data, {     //  edite personal doc
           headers: { "Content-Type": "multipart/form-data" },
         });
-        alert("Personal has Edit Successfully ✅");  //message
+        alert("Personal Document has Edit Successfully ✅");  //message
       } 
       
       else {
 
-        await api.post("/personal/", data, {      // to add new certificate
+        await api.post("/personal/", data, {      // to add new personal document
           headers: { "Content-Type": "multipart/form-data" },
         });
-        alert("personal has Added Successfully ✅");
+        alert("Personal Document has Added Successfully ✅");
       }
 
 
       navigate("/personal");
     } catch (error) {
-      console.error("Error saving personal:", error.response?.data || error);
+      console.error("Error saving Personal Document:", error.response?.data || error);
       alert("Oops! something wrong");
     }
   };
@@ -110,12 +111,12 @@ function PersonalForm() {
   return (
     <div className="main-content">
       <div className="form-container">
-        <h1>{docId ? "Update Certificate" : "Add New Certificate "}</h1>
+        <h1>{docId ? "Update Personal Document" : "Add New Personal Document "}</h1>
 
 
 
         <form onSubmit={handleSubmit}>
-          <label>personal Title</label>
+          <label> Document Title</label>
           <input
             type="text"
             name="title"
@@ -123,29 +124,6 @@ function PersonalForm() {
             onChange={handleChange}
             required
           />
-
-
-
-          {/* <label>Organization</label>
-          <input
-            type="text"
-            name="organization"
-            value={formData.organization}
-            onChange={handleChange}
-            required
-          /> */}
-
-
-
-          {/* <label>Date Obtained</label>
-          <input
-            type="date"
-            name="date_obtained"
-            value={formData.date_obtained}
-            onChange={handleChange}
-            required
-          /> */}
-
 
 
           <label>Upload File</label>
