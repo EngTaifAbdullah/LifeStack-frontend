@@ -101,7 +101,7 @@ a {
 }
 
 .card {
-  background-color: #767777;
+  background-color: #e8e6e6;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -122,7 +122,7 @@ a {
 
 .card p {
   font-size: 0.9rem;
-  color: #ffffff;
+  color: #967b7b;
   margin-bottom: 6px;
 }
 
@@ -141,7 +141,7 @@ a {
 }
 
 .card1 {
-  background-color: #ffffff;
+  background-color: #e6e4e4;
   border-radius: 16px;
   padding: 30px;              
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
@@ -167,7 +167,7 @@ a {
 }
 
 .card {
-  background-color: #767777;
+  background-color: #e0dede;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -182,13 +182,13 @@ a {
 
 .card h1 {
   font-size: 1.7rem;
-  color: #ffffff;
+  color: #050505;
   margin-bottom: 8px;
 }
 
 .card p {
   font-size: 0.9rem;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 6px;
 }
 

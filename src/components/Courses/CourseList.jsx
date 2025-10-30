@@ -68,7 +68,9 @@ function CourseList() {
               <h1>{course.title}</h1>
               <p className="description">{course.description}</p>
               <p className="category">
-              <p><strong>Category:</strong> {course.category?.category_type || course.category || "—"}</p>
+              <p className="category">
+              <strong>Category:</strong> {course.category_name || "—"}
+              </p>
               </p>
 
 
