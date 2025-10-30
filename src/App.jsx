@@ -14,7 +14,7 @@ import PersonalView from "./components/PersonalDocuments/PersonalView";
 
 import CourseForm from "./components/Courses/CourseForm";
 import CourseList from "./components/Courses/CourseList";
-import CourseView from "./components/Courses/CourseView";
+// import CourseView from "./components/Courses/CourseView";
 
 import './App.css'
 
@@ -43,7 +43,7 @@ function App() {
 
        <Route path="/courses" element={<CourseList />} />
        <Route path="/courses/new" element={<CourseForm />} />
-       <Route path="/courses/:courseId" element={<CourseView />} />
+       {/* <Route path="/courses/:courseId" element={<CourseView />} /> */}
        <Route path="/courses/:courseId/edit" element={<CourseForm />} />
 
 

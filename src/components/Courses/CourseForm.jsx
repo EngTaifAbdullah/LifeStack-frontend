@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../../api/api";
 import "../../App.css";
+
 // _________________________________________________________________________________________________________________________________
 
 function CourseForm() {
@@ -72,7 +73,6 @@ function CourseForm() {
     try {
       if (courseId) {
         await api.put(`/courses/${courseId}/`, newCourse);
-        alert("Gols Updated Successfully ✅");
 
       } else {
         await api.post("/courses/", newCourse);

@@ -75,9 +75,9 @@ function CourseList() {
 
 
               <div className="buttons">
-                <Link to={`/courses/${course.id}`} className="btn btn-view">
+                {/* <Link to={`/courses/${course.id}`} className="btn btn-view">
                   View
-                </Link>
+                </Link> */}
 
 
                 <Link to={`/courses/${course.id}/edit`} className="btn btn-edit">
