@@ -31,8 +31,8 @@ function NavBar() {
         <Link to="/">Home</Link>
         <Link to="/personal">Personal Document</Link>
         <Link to="/certificate">Certificates</Link>
-        <Link to="/courses">Future Goals</Link>
-
+        {/* <Link to="/courses">Future Goals</Link> */}
+        <Link to="/courses/dashboard">Future Goals</Link>
 
         <button
           onClick={() => setDarkMode(!darkMode)}
