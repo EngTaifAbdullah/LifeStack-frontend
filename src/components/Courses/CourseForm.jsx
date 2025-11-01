@@ -12,12 +12,12 @@ function CourseForm() {
 
 // All required fileds
   const [title, setTitle] = useState("");
-  const [provider, setProvider] = useState("");   //i put it this filed it sis not require
+  const [provider, setProvider] = useState("");   // i put it this filed it sis not require
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState([]);
 
-// _________________________________________________________
+// ____________________________________________________________________________
 
   useEffect(() => {
     fetchCategories();
@@ -56,7 +56,7 @@ function CourseForm() {
     }
   };
 
-// _________________________________________________________
+// ____________________________________________________________________________
 
   // to submit nwe form (create or update)
   const handleSubmit = async (e) => {
@@ -83,7 +83,7 @@ function CourseForm() {
       alert("Error Saving Goles ");
     }
   };
-// _________________________________________________________
+// ____________________________________________________________________________
 
   return (
     

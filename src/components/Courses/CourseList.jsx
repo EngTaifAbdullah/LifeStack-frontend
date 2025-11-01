@@ -66,18 +66,16 @@ function CourseList() {
             className="filter-select"
           >
             <option value="All">All Categories</option>
-            <option value="TASK">Task</option>
-            <option value="COURSE">Course</option>
-            <option value="EXAM">Exam</option>
+            <option value="Task">Task</option>
+            <option value="Course">Course</option>
+            <option value="Exam">Exam</option>
           </select>
         </div>
       </div>
 
 
       <div>
-        <Link to="/courses/new" className="add-btn">
-          Add New Goal
-        </Link>
+        <Link to="/courses/new" className="add-btn">Add New Goal</Link>
       </div>
 
       {filteredCourses.length === 0 ? (
@@ -118,4 +116,3 @@ function CourseList() {
 }
 
 export default CourseList;
-

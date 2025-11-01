@@ -26,7 +26,7 @@ function DashboardCourses() {
   };
 
 
-  // ____________________________________________________________________
+  // ______________________________________________________________________________
 
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this Goal ❓")) {
@@ -145,3 +145,4 @@ function DashboardCourses() {
 }
 
 export default DashboardCourses;
+// _________________________________________________________________________________________________________________________________

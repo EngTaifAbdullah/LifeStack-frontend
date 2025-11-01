@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #1f2937;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a,
+.nav-left a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  background-color: #2563eb;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-login {
+  background-color: #10b981;
+}
+
+.btn-logout {
+  background-color: #ef4444;
+}

@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../App.css";
 
-// _________________________________________________________________________________________________________
+// _________________________________________________________________________________________________________________________________
 
-// this code i tacke it from my portofilo in first project
+function Navbar() {
 
-function NavBar() {
-
+  const navigate = useNavigate();
+  const accessToken = localStorage.getItem("access");
+  const isLoggedIn = !!accessToken;
   const [darkMode, setDarkMode] = useState(false);
+
+// _________________________________________________________________________________________________________________________________
+
+//my code i take it from my portifolio (frist project)
 
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode") === "true";
@@ -21,19 +26,38 @@ function NavBar() {
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
-  // _________________________________________________________________________________________________________
+  const handleLogout = () => {
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+    navigate("/login");
+  };
+
+  // _________________________________________________________________________________________________________________________________
 
   return (
-    <header className="top-menu">
-      <h2>MY LifeStack</h2>
+    <nav className={`navbar ${darkMode ? "navbar-dark" : "navbar-light"}`}>
 
-      <nav>
+      <div className="nav-left">
+        <Link to="/" className="nav-logo">LifeStack</Link>
+      </div>
+
+      {/* _________________________________________________________________ */}
+
+      <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/personal">Personal Document</Link>
-        <Link to="/certificate">Certificates</Link>
-        {/* <Link to="/courses">Future Goals</Link> */}
-        <Link to="/courses/dashboard">Future Goals</Link>
 
+        {isLoggedIn && (
+          <>
+            <Link to="/personal">Personal Docs</Link>
+            <Link to="/certificate">Certificates</Link>
+            <Link to="/courses/dashboard">Future Goals</Link>
+          </>
+        )}
+      </div>
+
+      {/* _________________________________________________________________ */}
+
+      <div className="nav-right">
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="mode-toggle"
@@ -41,9 +65,21 @@ function NavBar() {
         >
           {darkMode ? "☀️" : "🌙"}
         </button>
-      </nav>
-    </header>
+
+      {/* _________________________________________________________________ */}
+
+        {!isLoggedIn ? (
+          <>
+            <Link to="/signup" className="btn btn-signup">Signup</Link>
+            <Link to="/login" className="btn btn-login">Login</Link>
+          </>
+        ) : (
+          <button onClick={handleLogout} className="btn btn-logout">Logout</button>
+        )}
+      </div>
+    </nav>
   );
 }
 
-export default NavBar;
+export default Navbar;
+// _________________________________________________________________________________________________________________________________
