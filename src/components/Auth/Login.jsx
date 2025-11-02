@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import api from "../../api/api";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, Link } from "react-router-dom";
+import "./Auth.css"; 
 // _________________________________________________________________________________________________________
 
 function Login() {
@@ -32,24 +32,50 @@ function Login() {
     }
   };
  
+  // ____________________________________________________
+
   return (
 
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form onSubmit={handleLogin} className="bg-white p-6 rounded-xl shadow-md w-80">
-
-        <h2 className="text-xl font-bold mb-4 text-center">Login</h2>
-
-        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} className="border p-2 w-full mb-3 rounded"/>
+    <div className="auth-container">
+      <div className="auth-card neon-glow">
+        <h2 className="auth-title">Welcome Back </h2>
+        <p className="auth-subtitle">Please sign in to continue</p>
 
 
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="border p-2 w-full mb-3 rounded"/>
 
-        {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="auth-input"
+          />
 
-        <button type="submit" className="bg-blue-500 text-white p-2 w-full rounded hover:bg-blue-600">Login</button>
-      </form>
+
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="auth-input"/>
+
+          {error && <p className="auth-error">{error}</p>}
+
+          <button type="submit" className="auth-btn">Login</button>
+        </form>
+
+        <p className="auth-footer">
+          Don’t have an account? <Link to="/signup">Sign Up</Link>
+        </p>
+      </div>
     </div>
   );
 }
 
 export default Login;
+
+// _________________________________________________________________________________________________________
+
+
+

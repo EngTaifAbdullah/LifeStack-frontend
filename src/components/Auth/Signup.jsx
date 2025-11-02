@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import api from "../../api/api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // ____________________________________________________________________________________________________________________________________________________________________________
 
@@ -36,26 +36,50 @@ function Signup() {
     }
   };
 
-  // ____________________________________________________________________________________________________________________________________________________________________________
+  // ____________________________________________________
+
 
   return (
 
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form onSubmit={handleSignup} className="bg-white p-6 rounded-xl shadow-md w-80">
+    <div className="auth-container">
+      <div className="auth-card neon-glow">
+        <h2 className="auth-title">Create Account</h2>
+        <p className="auth-subtitle">Join us</p>
 
-        <h2 className="text-xl font-bold mb-4 text-center">Sign Up</h2>
 
-        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} className="border p-2 w-full mb-3 rounded"/>
+        <form onSubmit={handleSignup}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="auth-input"/>
 
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="border p-2 w-full mb-3 rounded"/>
 
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="border p-2 w-full mb-3 rounded"/>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="auth-input"/>
 
-        {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-        {success && <p className="text-green-500 text-sm mb-2">{success}</p>}
 
-        <button type="submit" className="bg-blue-500 text-white p-2 w-full rounded hover:bg-blue-600">Create Account</button>
-      </form>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="auth-input"/>
+
+          {error && <p className="auth-error">{error}</p>}
+          {success && <p className="auth-success">{success}</p>}
+
+          <button type="submit" className="auth-btn">Sign Up</button>
+        </form>
+
+        <p className="auth-footer">Already have an account? <Link to="/login">Login</Link>
+        </p>
+      </div>
     </div>
   );
 }
@@ -63,3 +87,4 @@ function Signup() {
 export default Signup;
 
 // ____________________________________________________________________________________________________________________________________________________________________________
+
