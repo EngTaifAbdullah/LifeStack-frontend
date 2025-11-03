@@ -52,12 +52,12 @@ function DashboardCourses() {
 
     <div className="main-content">
       <div className="main-header animate__animated animate__fadeIn">
-        <h1>🎯 All Future Goals</h1>
-      </div>
+        <h1>All Future Goals</h1></div>
 
       <div className="mb-4">
         <Link to="/courses/new" className="btn btn-add animate__animated animate__fadeIn animate__delay-1s">Add New Goal</Link>
       </div>
+
 
 
       {/* Adding Fillter look like Dashboard Filters */}
@@ -71,25 +71,22 @@ function DashboardCourses() {
           
      // __________________________________________________
 
-          <div
-            key={item.label}
+          <div key={item.label}
             className="card dashboard-card"
             style={{ backgroundColor: item.color, cursor: "pointer" }}
             onClick={() => setSelectedCategory(item.label)}>
 
             <h2>{item.label}</h2>
             <p>{item.count}</p>
-          </div>
-        ))}
+          </div>))}
       </div>
 
-      {/* goals card */}
+
+      {/* All goals card */}
       <div className="card-grid animate__animated animate__fadeInUp animate__delay-1s">
         {filteredCourses.map((course) => (
           <div key={course.id} className="card">
-            <div className="card-image">
 
-            </div>
             <div className="card-content">
               <h1>{course.title}</h1>
               <p>_________________________________</p>
@@ -106,9 +103,7 @@ function DashboardCourses() {
           </div>
         ))}
         {filteredCourses.length === 0 && (
-          <p className="text-gray-500 text-center mt-10">
-            No Goals found in this category.
-          </p>
+          <p className="text-gray-500 text-center mt-10">No Goals found in this category.</p>
         )}
       </div>
     </div>

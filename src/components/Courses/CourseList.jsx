@@ -56,17 +56,15 @@ function CourseList() {
 
     <div className="main-content">
       <div className="main-header">
-        <h1>🎯 All Future Goals</h1>
-
+      
     {/* ____________________________________ */}
 
         <div className="filter-container">
-          <select
-            value={filterCategory}
+          <select value={filterCategory}
             onChange={(e) => setFilterCategory(e.target.value)}
             className="filter-select">
 
-            <option value="All">All Categories</option>
+            <option value="All">All Categories</option> 
             <option value="Task">Task</option>
             <option value="Course">Course</option>
             <option value="Exam">Exam</option>
@@ -82,8 +80,7 @@ function CourseList() {
 
       {filteredCourses.length === 0 ? (
         <p className="text-gray-500 text-center mt-10">
-          There are no courses for this category.
-        </p>
+          There are no courses for this category.</p>
       ) : (
         <div className="cards-grid3">
           {filteredCourses.map((course) => (
@@ -94,7 +91,6 @@ function CourseList() {
 
               <p className="description">{course.description}</p>
               <p className="category">
-                
                 <strong>Category:</strong> {course.category_name || "—"}
               </p>
     {/* ____________________________________ */}

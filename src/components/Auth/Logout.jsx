@@ -16,8 +16,8 @@ function Logout() {
   }, [navigate]);
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <p>Logout...</p>
+    <div 
+    className="flex justify-center items-center h-screen"><p>Logout...</p>
     </div>
   );
 }

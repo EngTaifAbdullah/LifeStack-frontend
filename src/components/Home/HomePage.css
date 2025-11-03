@@ -1,4 +1,4 @@
-/* 🌈 تصميم احترافي لصفحة Home */
+
 
 .hero-container {
   display: flex;
@@ -6,14 +6,13 @@
   align-items: center;
   justify-content: center;
   height: 90vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, #3d1247, #5f3062, #794282);
   color: #fff;
   text-align: center;
   overflow: hidden;
   position: relative;
 }
 
-/* ✨ خلفية متحركة بسيطة */
 .hero-container::before {
   content: "";
   position: absolute;

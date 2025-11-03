@@ -94,8 +94,7 @@ function CertificateList() {
 
       {certificates.length === 0 ? (
         <p className="text-gray-500 text-center mt-10">
-          There are no Certificates yet
-        </p>
+           There are no Certificates yet</p>
       ) : (
         <div className="cards-grid">
           {certificates.map((cert) => (

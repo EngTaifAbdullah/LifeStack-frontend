@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion";  //laibrary from bootstrap
 import "./HomePage.css";
 // _________________________________________________________________________________________________________________________________
 
@@ -12,7 +12,7 @@ function Home() {
         className="hero-title"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}>Welcome to LifeStack</motion.h1>
+        transition={{ duration: 0.5, ease: "easeOut" }}>Welcome to LifeStack</motion.h1>
 
 
 

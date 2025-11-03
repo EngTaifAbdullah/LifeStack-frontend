@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";   //icons i install react-icons
 
 // _________________________________________________________________________________________________________________________
 
@@ -30,11 +30,12 @@ function Navbar() {
 
   // _________________________________________________________________________________________________________________________
 
+  // to check the user if you dont login you will see geniral menu
+
   const checkAuth = () => {
     const access = localStorage.getItem("access");
     const token = localStorage.getItem("token");
-    return !!(access || token);
-  };
+    return !!(access || token);};
 
   useEffect(() => {
     setIsAuthenticated(checkAuth());
@@ -100,16 +101,10 @@ function Navbar() {
         {navLinks.map((link) => {
           if (link.auth && !isAuthenticated) return null;
           return (
-            <Link
-              key={link.path}
-              to={link.path}
+            <Link key={link.path} to={link.path}
               className={location.pathname === link.path ? "active" : ""}
-              onClick={() => setMenuOpen(false)}
-              style={{ textDecoration: "none" }}>
-              {link.label}
-            </Link>
-          );
-        })}
+              onClick={() => setMenuOpen(false)} style={{ textDecoration: "none" }}>
+              {link.label}</Link>);})}
       </nav>
 
       {/* ______________________________________________________________ */}
@@ -121,16 +116,11 @@ function Navbar() {
             <Link to="/signup" className="btn-signup" style={{ textDecoration: "none" }}>Sign Up</Link>
           </>
         ) : (
-          <button onClick={handleLogout} className="btn-logout">Logout</button>
-        )}
+          <button onClick={handleLogout} className="btn-logout">Logout</button>)}
 
-        <button onClick={toggleDarkMode} className="mode-toggle">
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
+        <button onClick={toggleDarkMode} className="mode-toggle">{darkMode ? <FaSun /> : <FaMoon />}</button>
 
-        <button onClick={toggleMenu} className="mode-toggle">
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        <button onClick={toggleMenu} className="mode-toggle">{menuOpen ? <FaTimes /> : <FaBars />}</button>
       </div>
 
       {/* ______________________________________________________________ */}
@@ -150,10 +140,7 @@ function Navbar() {
                 <Link key={link.path} to={link.path}
                   onClick={() => setMenuOpen(false)}
                   style={{ textDecoration: "none" }}>
-                  {link.label}
-                </Link>
-              );
-            })}
+                  {link.label}</Link>);})}
 
             {isAuthenticated ? (
               <button onClick={handleLogout} className="btn-logout">Logout</button>
@@ -161,15 +148,11 @@ function Navbar() {
               <>
                 <Link to="/login" className="btn-login">Login</Link>
                 <Link to="/signup" className="btn-signup">Sign Up</Link>
-              </>
-            )}
-
-          </motion.div>
-        )}
+              </>)}
+          </motion.div>)}
       </AnimatePresence>
     </motion.nav>
   );
 }
-
 export default Navbar;
 // _________________________________________________________________________________________________________________________

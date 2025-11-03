@@ -16,12 +16,12 @@ function CertificateForm() {
     title: "",
     organization: "",
     date_obtained: "",
-    file: null,
+    file: null,});
 
-  });
 
   const [fileName, setFileName] = useState("");
   const [existingFileUrl, setExistingFileUrl] = useState("");       // To save the linke for previos file
+
 
   useEffect(() => {
     if (certId) {
@@ -91,7 +91,7 @@ function CertificateForm() {
         await api.put(`/certificate/${certId}/`, data, {     //  edite certificate
           headers: { "Content-Type": "multipart/form-data" },
         });
-        alert("Certificate has Edit Successfully ✅");  //message
+        alert("Certificate has Edit Successfully ✅");  // alert message
       } 
       
 
@@ -99,7 +99,7 @@ function CertificateForm() {
         await api.post("/certificate/", data, {           // to add new certificate
           headers: { "Content-Type": "multipart/form-data" },
         });
-        alert("Certificate has Added Successfully ✅");
+        alert("Certificate has Added Successfully ✅"); // alert message
       }
 
 
@@ -116,7 +116,7 @@ function CertificateForm() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45 }}
-      className="container my-5">
+      className="container my-5"> 
 
 {/* _________________________________________________________________ */}
 
@@ -127,40 +127,22 @@ function CertificateForm() {
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">Certificate Title</label>
-              <input
-                type="text"
-                name="title"
-                className="form-control"
-                value={formData.title}
-                onChange={handleChange}
-                required
-              />
+              <input type="text" name="title"className="form-control"
+                value={formData.title} onChange={handleChange} required/>
             </div>
 {/* _________________________________________________________________ */}
 
             <div className="mb-3">
               <label className="form-label">Organization</label>
-              <input
-                type="text"
-                name="organization"
-                className="form-control"
-                value={formData.organization}
-                onChange={handleChange}
-                required
-              />
+              <input type="text" name="organization" className="form-control"
+                value={formData.organization} onChange={handleChange} required/>
             </div>
 {/* _________________________________________________________________ */}
 
             <div className="mb-3">
               <label className="form-label">Date Obtained</label>
-              <input
-                type="date"
-                name="date_obtained"
-                className="form-control"
-                value={formData.date_obtained}
-                onChange={handleChange}
-                required
-              />
+              <input type="date" name="date_obtained" className="form-control"
+                value={formData.date_obtained} onChange={handleChange} required/>
             </div>
 {/* _________________________________________________________________ */}
 
@@ -173,12 +155,9 @@ function CertificateForm() {
               {/* To viwe privios file you updated*/}
               
               {fileName && !formData.file && (
-                <p className="mt-2">
-                   Current File :{" "}
-                  <a href={existingFileUrl} target="_blank" rel="noopener noreferrer">
-                    {fileName}</a></p>)}
+                <p className="mt-2"> Current File :{" "}
+                  <a href={existingFileUrl} target="_blank" rel="noopener noreferrer">{fileName}</a></p>)}
             </div>
-
             {formData.file && <p>📁 New File: {formData.file.name}</p>}
 
 {/* _________________________________________________________________ */}
@@ -195,6 +174,5 @@ function CertificateForm() {
     </motion.div>
   );
 }
-
 export default CertificateForm;
 // _____________________________________________________________________________________________________________________________________________________________
