@@ -106,11 +106,8 @@ function CertificateView() {
 
       
             <div className="d-flex justify-content-center align-items-center p-3">
-              <img
-                src={getCertificateImage(certificate.title)} //images settings
-                alt={certificate.title}
-                className="img-fluid certificate-img"/>
-            </div>
+              <img src={getCertificateImage(certificate.title)} //images settings
+                alt={certificate.title} className="img-fluid certificate-img"/></div>
 
   {/* ___________________________________________________________________________________________________ */}
 

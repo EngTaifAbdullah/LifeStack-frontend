@@ -78,8 +78,7 @@ function Signup() {
 
           <button type="submit" className="auth-btn">Sign Up</button>
         </form>
-        <p className="auth-footer">Already have an account? <Link to="/login">Login</Link>
-        </p>
+        <p className="auth-footer">Already have an account? <Link to="/login">Login</Link></p>
       </div>
     </div>
   );

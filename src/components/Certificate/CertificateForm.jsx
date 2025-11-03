@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import api from "../../api/api";
 import "../../App.css";
-import { motion } from "framer-motion"; //library from botstrap
+import { motion } from "framer-motion";  //library from botstrap
 
 // _____________________________________________________________________________________________________________________________________________________________
 
@@ -84,8 +84,7 @@ function CertificateForm() {
     // if the user want to update the privios file do it ! if not..dont do anything
     
     if (formData.file) {
-      data.append("file", formData.file);
-    }
+      data.append("file", formData.file);}
 
     try {
       if (certId) {
@@ -177,10 +176,7 @@ function CertificateForm() {
                 <p className="mt-2">
                    Current File :{" "}
                   <a href={existingFileUrl} target="_blank" rel="noopener noreferrer">
-                    {fileName}
-                  </a>
-                </p>
-              )}
+                    {fileName}</a></p>)}
             </div>
 
             {formData.file && <p>📁 New File: {formData.file.name}</p>}

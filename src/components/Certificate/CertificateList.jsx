@@ -79,9 +79,7 @@ function CertificateList() {
         await api.delete(`/certificate/${id}/`);
         fetchCertificates();
       } catch (error) {
-        console.error("Error deleting certificate:", error);
-      }
-    }
+        console.error("Error deleting certificate:", error);}}
   };
 // _________________________________________________________________________________________________________________________________
 
@@ -106,10 +104,8 @@ function CertificateList() {
 
               {/* Image container to make images square */}
               <div className="card-image-container" style={{
-                  width: "230px",
-                  height: "230px",
-                  margin: "0 auto",
-                  overflow: "hidden",
+                  width: "230px", height: "230px",
+                  margin: "0 auto", overflow: "hidden",
                   borderRadius: "10px",}}>
 
                 <img src={getCertificateImage(cert.title)} alt={cert.title}
@@ -122,9 +118,7 @@ function CertificateList() {
               <p>Date Obtained: {cert.date_obtained}</p>
 
               <div className="buttons">
-                <Link to={`/certificate/${cert.id}`} className="btn btn-view">
-                  View
-                </Link>
+                <Link to={`/certificate/${cert.id}`} className="btn btn-view">View</Link>
               </div>
             </div>
           ))}
