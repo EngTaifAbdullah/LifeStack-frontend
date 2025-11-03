@@ -91,7 +91,6 @@ function PersonalForm() {
       } 
       
       else {
-
         await api.post("/personal/", data, {      // to add new personal document
           headers: { "Content-Type": "multipart/form-data" },
         });
@@ -122,15 +121,14 @@ function PersonalForm() {
             name="title"
             value={formData.title}
             onChange={handleChange}
-            required
-          />
+            required/>
+
 
 
           <label>Upload File</label>
           <input type="file" name="file" onChange={handleChange} />
-          
+
           {/* To viwe privios file you updated*/}
-          
           {fileName && !formData.file && (
             <p>
                Current File :{" "}
@@ -140,9 +138,6 @@ function PersonalForm() {
             </p>
           )}
 
-
-
-     
           {formData.file && <p>📁 New File: {formData.file.name}</p>}
 
           <button type="submit">{docId ? "Edit" : "Add"}</button>

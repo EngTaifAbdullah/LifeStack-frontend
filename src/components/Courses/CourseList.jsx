@@ -58,21 +58,23 @@ function CourseList() {
       <div className="main-header">
         <h1>🎯 All Future Goals</h1>
 
+    {/* ____________________________________ */}
 
         <div className="filter-container">
           <select
             value={filterCategory}
             onChange={(e) => setFilterCategory(e.target.value)}
-            className="filter-select"
-          >
+            className="filter-select">
+
             <option value="All">All Categories</option>
             <option value="Task">Task</option>
             <option value="Course">Course</option>
             <option value="Exam">Exam</option>
+
           </select>
         </div>
       </div>
-
+    {/* ____________________________________ */}
 
       <div>
         <Link to="/courses/new" className="add-btn">Add New Goal</Link>
@@ -88,24 +90,20 @@ function CourseList() {
 
             <div key={course.id} className="card">
               <h1>{course.title}</h1>
+    {/* ____________________________________ */}
 
               <p className="description">{course.description}</p>
               <p className="category">
                 
                 <strong>Category:</strong> {course.category_name || "—"}
               </p>
+    {/* ____________________________________ */}
 
               <div className="buttons">
-                <Link to={`/courses/${course.id}/edit`} className="btn btn-edit">
-                  Edit
-                </Link>
+                <Link to={`/courses/${course.id}/edit`} className="btn btn-edit">Edit</Link>
+    {/* ____________________________________ */}
 
-                <button
-                  onClick={() => handleDelete(course.id)}
-                  className="btn btn-delete"
-                >
-                  Delete
-                </button>
+                <button onClick={() => handleDelete(course.id)}className="btn btn-delete">Delete</button>
               </div>
             </div>
           ))}
@@ -116,3 +114,4 @@ function CourseList() {
 }
 
 export default CourseList;
+// _________________________________________________________________________________________________________________________________

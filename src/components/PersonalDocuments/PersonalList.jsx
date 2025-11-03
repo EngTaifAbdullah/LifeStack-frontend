@@ -31,7 +31,6 @@ function PersonalList() {
       console.error("Error fetching Personal Document:", error);
     }
   };
-
 // _________________________________________________________________________________________________________________________________
 
 // static images 
@@ -52,6 +51,7 @@ function PersonalList() {
 // _________________________________________________________________________________________________________________________________
 
   const handleDelete = async (id) => {
+
     if (window.confirm("Are you sure you want to delete this Document ❓")) {
       try {
         await api.delete(`/personal/${id}/`);
@@ -72,9 +72,7 @@ function PersonalList() {
 
 
       <div>
-         <Link to="/personal/new" className="add-btn">
-          Add Personal Document
-        </Link>
+         <Link to="/personal/new" className="add-btn">Add Personal Document</Link>
       </div>
 
 
@@ -87,24 +85,19 @@ function PersonalList() {
           {personal.map((doc) => (
             <div key={doc.id} className="card">
 
-              <img
-                src={getPersonalImage(doc.title)}
-                alt={doc.title}
-                style={{
+              <img src={getPersonalImage(doc.title)}
+                alt={doc.title} style={{
                   width: "100%",
                   borderRadius: "10px",
                   marginBottom: "2px",
-                }}
-              />
+                }}/>
 
               <h2>{doc.title}</h2>
 
              {/* ____________________________________________________________________________ */}
 
               <div className="buttons">
-                <Link to={`/personal/${doc.id}`} className="btn btn-view">
-                  View
-                </Link>
+                <Link to={`/personal/${doc.id}`} className="btn btn-view">View</Link>
              {/* ____________________________________________________________________________ */}
 
               </div>
@@ -117,3 +110,4 @@ function PersonalList() {
 }
 
 export default PersonalList;
+// _________________________________________________________________________________________________________________________________

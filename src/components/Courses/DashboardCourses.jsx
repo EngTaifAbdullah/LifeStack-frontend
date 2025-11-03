@@ -15,7 +15,6 @@ function DashboardCourses() {
   }, []);
 
   const fetchCourses = async () => {
-
     try {
       const response = await api.get("/courses/");
       setCourses(response.data);
@@ -26,15 +25,11 @@ function DashboardCourses() {
   };
 
 
-  // ______________________________________________________________________________
-
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this Goal ❓")) {
-
       try {
         await api.delete(`/courses/${id}/`);
-        fetchCourses(); 
-
+        fetchCourses();
       } catch (error) {
         console.error("Error deleting course:", error);
       }
@@ -51,87 +46,63 @@ function DashboardCourses() {
     selectedCategory === "ALL"
       ? courses
       : courses.filter((c) => c.category_name === selectedCategory);
-
-  // _________________________________________________________________________________________________________________________________
+// _________________________________________________________________________________________________________________________________
 
   return (
+
     <div className="main-content">
-      <div className="main-header">
+      <div className="main-header animate__animated animate__fadeIn">
         <h1>🎯 All Future Goals</h1>
       </div>
 
-      <div>
-        <Link to="/courses/new" className="add-btn">Add New Goal</Link>
+      <div className="mb-4">
+        <Link to="/courses/new" className="btn btn-add animate__animated animate__fadeIn animate__delay-1s">Add New Goal</Link>
       </div>
 
-      
-      {/* _________________________________________________________________ */}
 
-      {/* filter but look like a dashbord */}
-      <div
-        className="dashboard-cards"
-        style={{ display: "flex", gap: "20px", marginBottom: "20px" }}
-      >
-      {/* _________________________________________________________________ */}
+      {/* Adding Fillter look like Dashboard Filters */}
+      <div className="dashboard-cards animate__animated animate__fadeInUp">
+        {[
+          { label: "ALL", color: "#6366f1", count: courses.length },
+          { label: "COURSE", color: "#f59e0b", count: counts.COURSE },
+          { label: "EXAM", color: "#ef4444", count: counts.EXAM },
+          { label: "TASK", color: "#4caf50", count: counts.TASK },
+        ].map((item) => (
+          
+     // __________________________________________________
 
-        <div
-          className="card dashboard-card"
-          style={{ backgroundColor: "#6366f1", cursor: "pointer" }}
-          onClick={() => setSelectedCategory("ALL")}
-        >
-          <h2>ALL</h2>
-          <p>{courses.length}</p>
-        </div>
+          <div
+            key={item.label}
+            className="card dashboard-card"
+            style={{ backgroundColor: item.color, cursor: "pointer" }}
+            onClick={() => setSelectedCategory(item.label)}>
 
-      {/* _________________________________________________________________ */}
-
-        <div
-          className="card dashboard-card"
-          style={{ backgroundColor: "#f59e0b", cursor: "pointer" }}
-          onClick={() => setSelectedCategory("COURSE")}
-        >
-          <h2>COURSES</h2>
-          <p>{counts.COURSE}</p>
-        </div>
-      {/* _________________________________________________________________ */}
-
-        <div
-          className="card dashboard-card"
-          style={{ backgroundColor: "#ef4444", cursor: "pointer" }}
-          onClick={() => setSelectedCategory("EXAM")}
-        >
-          <h2>EXAMS</h2>
-          <p>{counts.EXAM}</p>
-        </div>
-
-      {/* _________________________________________________________________ */}
-
-        <div
-          className="card dashboard-card"
-          style={{ backgroundColor: "#4caf50", cursor: "pointer" }}
-          onClick={() => setSelectedCategory("TASK")}
-        >
-          <h2>TASKS</h2>
-          <p>{counts.TASK}</p>
-        </div>
-        
-      {/* _________________________________________________________________ */}
+            <h2>{item.label}</h2>
+            <p>{item.count}</p>
+          </div>
+        ))}
       </div>
 
-      {/* Filtered all Goals  */}
-      <div className="cards-grid3">
+      {/* goals card */}
+      <div className="card-grid animate__animated animate__fadeInUp animate__delay-1s">
         {filteredCourses.map((course) => (
           <div key={course.id} className="card">
+            <div className="card-image">
 
-            <h1>{course.title}</h1>
-            <p>{course.description}</p>
-            <p><strong>Category:</strong> {course.category_name || "—"}</p>
+            </div>
+            <div className="card-content">
+              <h1>{course.title}</h1>
+              <p>_________________________________</p>
 
-            <div className="buttons">
+
+              <p className="card-description">{course.description}</p>
+              <p><strong>Category:</strong> {course.category_name || "—"}</p>
+            </div>
+
+            <div className="card-actions">
               <Link to={`/courses/${course.id}/edit`} className="btn btn-edit">Edit</Link>
               <button onClick={() => handleDelete(course.id)} className="btn btn-delete">Delete</button>
             </div>
-
           </div>
         ))}
         {filteredCourses.length === 0 && (

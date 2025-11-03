@@ -44,26 +44,14 @@ function Login() {
 
 
         <form onSubmit={handleLogin}>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="auth-input"
-          />
+          <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} className="auth-input"/>
 
 
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="auth-input"/>
-
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="auth-input"/>
           {error && <p className="auth-error">{error}</p>}
-
           <button type="submit" className="auth-btn">Login</button>
         </form>
+
 
         <p className="auth-footer">
           Don’t have an account? <Link to="/signup">Sign Up</Link>

@@ -1,33 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-// _________________________________________________________________________________________________________
+import { motion } from "framer-motion";
+import "./HomePage.css";
+// _________________________________________________________________________________________________________________________________
 
 function Home() {
+
   return (
+    <div className="hero-container">
 
-    <div className="home-container">
+      <motion.h1
+        className="hero-title"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}>Welcome to LifeStack</motion.h1>
 
-      <div className="welcome-card">
-        <h1> Welcome to LifeStack Websit 🍓📑 </h1>
-        <p>
-          tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
-        </p>
-      </div>
-{/* ____________________________________________________ */}
 
-      <div className="home-info">
-        <h2>🚀 Quick Overview</h2>
 
-        <ul>
-          <li>TAIF ABDULLAH</li>
-          <li>TAIF ABDULLAH TAIF ABDULLAH</li>
-          <li>TAIF ABDULLAH TAIF ABDULLAH TAIF ABDULLAH </li>
-        </ul>
-        
-      </div>
+      <motion.p
+        className="hero-subtitle"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}>Professional Certificate & Course Management System</motion.p>
+
+
     </div>
   );
 }
 
 export default Home;
+// _________________________________________________________________________________________________________________________________

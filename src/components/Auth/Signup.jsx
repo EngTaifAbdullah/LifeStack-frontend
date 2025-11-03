@@ -36,7 +36,7 @@ function Signup() {
     }
   };
 
-  // ____________________________________
+  // ____________________________________________________________________________________________________________________________________________________________________________
 
 
   return (
@@ -46,6 +46,7 @@ function Signup() {
         <h2 className="auth-title">Create Account</h2>
         <p className="auth-subtitle">Join us</p>
 
+      {/* ______________________________________________________________ */}
 
         <form onSubmit={handleSignup}>
           <input
@@ -54,7 +55,7 @@ function Signup() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="auth-input"/>
-
+      {/* ______________________________________________________________ */}
 
           <input
             type="email"
@@ -62,7 +63,7 @@ function Signup() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="auth-input"/>
-
+      {/* ______________________________________________________________ */}
 
           <input
             type="password"
@@ -73,10 +74,10 @@ function Signup() {
 
           {error && <p className="auth-error">{error}</p>}
           {success && <p className="auth-success">{success}</p>}
+      {/* ______________________________________________________________ */}
 
           <button type="submit" className="auth-btn">Sign Up</button>
         </form>
-
         <p className="auth-footer">Already have an account? <Link to="/login">Login</Link>
         </p>
       </div>

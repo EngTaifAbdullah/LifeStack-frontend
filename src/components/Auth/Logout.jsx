@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// _________________________________________________________________________________________________________
+
 function Logout() {
+
   const navigate = useNavigate();
 
   useEffect(() => {
+
     localStorage.removeItem("access");
     localStorage.removeItem("refresh");
     navigate("/login");
+    
   }, [navigate]);
 
   return (

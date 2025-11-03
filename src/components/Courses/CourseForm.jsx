@@ -6,18 +6,19 @@ import "../../App.css";
 // _________________________________________________________________________________________________________________________________
 
 function CourseForm() {
-
   const navigate = useNavigate();
   const { courseId } = useParams();
 
-// All required fileds
+
+  // All required fields
+
   const [title, setTitle] = useState("");
-  const [provider, setProvider] = useState("");   // i put it this filed it sis not require
+  const [provider, setProvider] = useState(""); // optional
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState([]);
 
-// ____________________________________________________________________________
+  // ____________________________________________________________________________
 
   useEffect(() => {
     fetchCategories();
@@ -26,10 +27,7 @@ function CourseForm() {
     }
   }, [courseId]);
 
-
-  // Get categories from backend to display it as dropdowen list
   const fetchCategories = async () => {
-
     try {
       const response = await api.get("/categories/");
       setCategories(response.data);
@@ -38,10 +36,7 @@ function CourseForm() {
     }
   };
 
-
-  // Fetch existing course data if editing
   const fetchCourse = async () => {
-
     try {
       const response = await api.get(`/courses/${courseId}/`);
       const course = response.data;
@@ -49,16 +44,14 @@ function CourseForm() {
       setTitle(course.title);
       setProvider(course.provider);
       setDescription(course.description);
-      setCategory(course.category?.id || ""); // by id
-
+      setCategory(course.category?.id || "");
     } catch (error) {
       console.error("Error fetching course:", error);
     }
   };
 
-// ____________________________________________________________________________
+  // ____________________________________________________________________________
 
-  // to submit nwe form (create or update)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -66,64 +59,47 @@ function CourseForm() {
       title,
       provider,
       description,
-      category: category ? parseInt(category) : null, 
-      user: 1, 
+      category: category ? parseInt(category) : null,
+      user: 1,
     };
 
     try {
       if (courseId) {
         await api.put(`/courses/${courseId}/`, newCourse);
-
       } else {
         await api.post("/courses/", newCourse);
       }
       navigate("/courses");
     } catch (error) {
       console.error("Error saving Goals:", error.response?.data || error);
-      alert("Error Saving Goles ");
+      alert("Error Saving Goals");
     }
   };
-// ____________________________________________________________________________
+
+  // ____________________________________________________________________________
 
   return (
-    
+
     <div className="main-content">
-      <div className="form-container">
-        <h1>{courseId ? "Edit Course" : "Add New Course"}</h1>
+      <div className="form-container animate__animated animate__fadeInUp">
+        <h1 className="animate__animated animate__fadeIn">{courseId ? "Edit Course" : "Add New Course"}</h1>
 
-        <form onSubmit={handleSubmit} className="form-card">
+        {/* ________________________________________________________________________________________________________________ */}
+
+        <form onSubmit={handleSubmit} className="form-card animate__animated animate__fadeIn animate__delay-1s">
           <label>Goal Title</label>
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required className="input-field animate__animated animate__fadeInLeft animate__fast"/>
+        {/* ________________________________________________________________________________________________________________ */}
 
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-
-          {/* i remove (required) so this feled it is optional */}
           <label>Provider</label>
-          <input
-            type="text"
-            value={provider}
-            onChange={(e) => setProvider(e.target.value)}
-          />
-
+          <input type="text" value={provider} onChange={(e) => setProvider(e.target.value)} className="input-field animate__animated animate__fadeInLeft animate__fast animate__delay-1s"/>
 
           <label>Description</label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
+          <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="input-field animate__animated animate__fadeInLeft animate__fast animate__delay-2s"/>
+        {/* ________________________________________________________________________________________________________________ */}
 
-
-          {/* as dropdown list */}
           <label>Category</label>
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            required
-          >
+          <select value={category} onChange={(e) => setCategory(e.target.value)} required className="input-field animate__animated animate__fadeInLeft animate__fast animate__delay-3s">
             <option value="">Select Category</option>
             {categories.map((cat) => (
               <option key={cat.id} value={cat.id}>
@@ -131,10 +107,9 @@ function CourseForm() {
               </option>
             ))}
           </select>
+        {/* ________________________________________________________________________________________________________________ */}
 
-          <button type="submit" className="btn btn-save">
-            {courseId ? "Update Course" : "Create Course"}
-          </button>
+          <button type="submit" className="btn btn-save animate__animated animate__pulse animate__infinite animate__slow">{courseId ? "Update Course" : "Create Course"}</button>
         </form>
       </div>
     </div>
@@ -142,3 +117,4 @@ function CourseForm() {
 }
 
 export default CourseForm;
+// _________________________________________________________________________________________________________________________________
