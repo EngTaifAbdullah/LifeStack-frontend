@@ -93,7 +93,11 @@ function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}>
 
-      <div className="logo">LifeStack</div>
+        <span style={{
+            fontWeight: "bold", fontSize: "22px",
+            color: "#fff", textShadow: "0 0 10px rgba(243, 205, 52, 0.81)",
+          }}>LifeStack
+        </span>
 
       {/* ______________________________________________________________ */}
 

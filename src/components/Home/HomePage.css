@@ -7,7 +7,7 @@
   justify-content: center;
   height: 90vh;
   background: linear-gradient(135deg, #3d1247, #5f3062, #794282);
-  color: #fff;
+  color: #8d5910;
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -46,24 +46,9 @@
   font-size: 1.4rem;
   font-weight: 400;
   margin-top: 1rem;
-  color: #b0e0e6;
+  color: #c19a6e;
   z-index: 2;
   animation: fadeIn 2s ease-in-out;
-}
-
-/* الزر */
-.hero-btn {
-  margin-top: 2.5rem;
-  padding: 0.8rem 2.2rem;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #00bcd4, #0097a7);
-  border: none;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  z-index: 2;
-  transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
@@ -75,10 +60,13 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+
+

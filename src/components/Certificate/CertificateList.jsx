@@ -67,6 +67,18 @@ function CertificateList() {
     try {
       const response = await api.get("/certificate/");
       setCertificates(response.data);
+
+
+      // just for presintation
+      const sortedData = response.data.sort((a, b) => {
+        const aIsCoursera = a.title.toLowerCase().includes("coursera");
+        const bIsCoursera = b.title.toLowerCase().includes("coursera");
+
+        if (aIsCoursera && !bIsCoursera) return -1;
+        if (!aIsCoursera && bIsCoursera) return 1;
+        return 0;
+      });
+
     } catch (error) {
       console.error("Error fetching certificates:", error);
     }

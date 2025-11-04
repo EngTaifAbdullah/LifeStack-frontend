@@ -5,34 +5,45 @@
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #ba1b9a;
-  color: #222;
-  transition: background 0.5s ease, color 0.5s ease;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* ================================== Main Content ================================== */
+/* ================================== Main Page ================================== */
 
 .main-content {
-  margin-top: 90px;
+  margin-top: 50px;
   padding: 40px;
 }
 
-/* ================================== Buttons ================================== */
+body, html,
+#root {
+  background: none !important;
+  background-color: transparent !important;
+}
 
-.btn,
-.add-btn {
+main,
+.container,
+.bg-light,
+.bg-body,
+div[class*="container"] {
+  background: transparent !important;
+}
+
+body {
+  background-color: #f7f7eab2 !important; /* light*/
+  transition: background-color 0.4s ease;
+}
+
+body.dark-mode {
+  background-color: #494949 !important; /*  dark  */
+  transition: background-color 0.4s ease;
+}
+
+/* ================================== Buttons Light ================================== */
+
+.btn, btn-view {
   display: inline-block;
-  background: linear-gradient(90deg, #4caf50, #236c27);
-  color: white;
+  background: linear-gradient(90deg, #8d5910, #a77f52);
+  color: white !important; 
+  border-radius: 12px !important;
   border: none;
-  border-radius: 8px;
   padding: 10px 18px;
   text-decoration: none; 
   font-weight: 500;
@@ -40,29 +51,39 @@ a {
   transition: all 0.3s ease;
 }
 
-.btn:hover,
+.add-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #8d5910, #a77f52);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 18px;
+  text-decoration: none; 
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover{
+  background: rgb(230, 218, 137)!important;
+  color: rgb(67, 60, 60) !important;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4) !important;
+}
+
 .add-btn:hover {
+ background: rgb(230, 218, 137);
+ color: rgb(67, 60, 60);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
 }
 
-/* ================================== Cards ================================== */
-
+/* ================================== Cards Light ================================== */
+/* cards */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 40px;
   padding: 30px 0;
-}
-
-.card {
-  background-color: #9a209a;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 .card::before {
@@ -72,28 +93,26 @@ a {
   height: 4px;
   bottom: 0;
   left: 0;
-  background: linear-gradient(90deg, #e157c8, #a63396);
+  background: linear-gradient(90deg, #5a042c,#e31eb5); 
   transition: width 0.4s ease;
 }
-
 .card:hover::before {
   width: 100%;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  background-color: #b9f8bb;
+  background-color: #bd9466b3;
 }
 
 .card h2 {
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.3rem;
+  color: #010000;
   margin-bottom: 10px;
 }
 
 .card p {
-  color: #666;
+  color: #6c5a14;
   font-size: 0.95rem;
   margin-bottom: 6px;
 }
@@ -110,60 +129,35 @@ a {
     transform: translateY(0);
   }
 }
-/* ================================== Grid One ================================== */
 
-.cards-grid1 {
-  display: flex;             
-  justify-content: center;      
-  align-items: center;         
-  min-height: 1vh;             
-  padding: 20px;               
-  box-sizing: border-box;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
 }
 
-.card1 {
-  background-color: #e6e4e4;
-  border-radius: 16px;
-  padding: 30px;              
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s, box-shadow 0.3s;
-  width: 250px;                
-  text-align: center;
-}
-
-.card1:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-
-/* ================================== Grid Three ================================== */
-
-.cards-grid3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 45px; 
-  justify-content: center;
-  padding: 10px 0;
-}
+/* ================================== Grid Three(goals) ================================== */
 
 .card {
-  background-color: #e0dede;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(189, 135, 21, 0.954);
   transition: transform 0.3s, box-shadow 0.3s;
   width: 95%; 
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
 .card h1 {
   font-size: 1.7rem;
-  color: #9f0299;
+  /* خط القزلز  */
+  color: #8d5910;
   margin-bottom: 8px;
 }
 
@@ -172,7 +166,6 @@ a {
   color: #000000;
   margin-bottom: 6px;
 }
-
 /* ================================== Certificate View  ================================== */
 
 .card1 .buttons {
@@ -182,32 +175,16 @@ a {
   gap: 12px;
   margin-top: 20px;
 }
-
-.card1 .btn {
-  flex: 1;
-  padding: 12px 0;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  min-width: 80px;
-  max-width: 100px;
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
 .card1 .btn:hover {
   transform: scale(1.07);
 }
-
 /* ================================== Form Container ================================== */
 
 .form-container {
   background-color: rgb(245, 245, 245);
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 10px rgba(188, 182, 31, 0.922);
   max-width: 600px;
   margin: 40px auto;
 }
@@ -223,14 +200,14 @@ a {
   display: block;
   margin-bottom: 6px;
   font-weight: 500;
-  color: #374151;
+  color: #000000;
 }
 
 .form-container input,
 .form-container textarea {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #d1d5db;
+  border: 1px solid #c2c8d2;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
@@ -238,17 +215,16 @@ a {
 
 .form-container input:focus,
 .form-container textarea:focus {
-  border-color: #2563eb;
+  border-color: #25eb43;
 }
 
 .form-container button {
-  background-color: #2563eb;
+  background-color: #8d5910;
   color: white;
   padding: 10px 16px;
   border: none;
   border-radius: 8px;
   font-size: 15px;
-
   cursor: pointer;
   margin-top: 10px;
   width: 100%;
@@ -256,60 +232,8 @@ a {
 }
 
 .form-container button:hover {
-  background-color: #1e40af;
-}
-
-/* ================================== Filter Styles ================================== */
-
-.filter-container {
-  margin-left: auto;
-}
-
-.filter-select {
-  padding: 10px 18px;
-  border-radius: 8px;
-  border: 2px solid (145deg, #ff9cc4, #ba338d);
-  background: linear-gradient(145deg, #ff9cc4, #ba338d);
-  font-size: 15px;
-  font-weight: 500;
-  color: #060606;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.4s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.filter-select:hover {
-  border-color: #65135b;
-  box-shadow: 0 4px 12px rgba(225, 87, 200, 0.25);
-  transform: translateY(-2px);
-}
-
-.filter-select:focus {
-  border-color: #65135b;
-  box-shadow: 0 0 12px rgba(225, 87, 200, 0.35);
-}
-
-
-.filter-select::-ms-expand {
-  display: none;
-}
-
-/* ================================== Card Animation ================================== */
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease forwards;
+  background-color: #c0b34e;
+  color: #000000;
 }
 
 /* ================================== Responsive Header ================================== */
@@ -320,7 +244,28 @@ a {
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
-/* ======================================================================================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  .navbar .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar .nav-links a {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar .auth-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* ======================================== Dashbord =============================================== */
 
 .dashboard-cards {
   display: flex;
@@ -328,20 +273,13 @@ a {
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
-
 .dashboard-card {
   flex: 1;
   min-width: 120px;
-  color: #fff;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 19px;
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.dashboard-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .card-grid {
@@ -350,29 +288,10 @@ a {
   gap: 20px;
 }
 
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
-
-.card-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
 .card-content {
   padding: 10px 15px;
   flex-grow: 1;
@@ -384,73 +303,72 @@ a {
   padding: 10px 15px;
 }
 
-.btn-edit {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-}
+/* ================================== Dark Mode 🌚 ================================== */
 
-.btn-delete {
-  background-color: #f44336;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;}
-
-  
-
-  
-/* ================================== Dark Mode ================================== */
-.dark-mode {
-  background-color: #2a2a2a;
-  color: #e9e9e9;
-}
-
+/* دارك منيو */
 .dark-mode .navbar {
-  background: linear-gradient(90deg, #5a2b4f, #3c1f3a);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(90deg, #64065c, #0f2c2e,#75075f85,#300228);
+  box-shadow: 0 8px 20px rgba(159, 15, 145, 0.703), 0 0 80px rgba(123,44,255,0.18);
 }
-
 .dark-mode .nav-links a {
-  color: #fff;
+  color: #ffffff;
 }
 
+/* بوتن الاوثنتكيشن للدارك */
 .dark-mode .auth-buttons a {
-  background: #ffa500;
-  color: #000;
+  background: #64065c;
+  color: #ffffff;
+}
+.dark-mode .btn-logout {
+  background: #64065c !important;
+  color: #ffffff;
 }
 
+/* ======================================= */
+/* card dark */
 .dark-mode .card {
-  background-color: #383838;
-  color: #f0f0f0;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+  background-color: #4e4e4e;
+  color: #f0f0f0 ;
+  box-shadow: 0 4px 12px rgba(126, 4, 80, 0.874);
 }
-
 .dark-mode .card::before {
-  background: linear-gradient(90deg, #e157c8, #a63396);
+  background: linear-gradient(90deg, #0f2fff, #ff188f);
 }
 
-.dark-mode .form-container {
-  background-color: #333;
-  box-shadow: 0 4px 15px rgba(255,255,255,0.08);
+.dark-mode h1{color: #ffffff;}
+
+
+/* add new dark */
+.dark-mode .add-btn {
+  background: linear-gradient(90deg, #64065c, #d560be85);
+  color: white;
+}
+.dark-mode .btn {  
+  background: linear-gradient(90deg, #64065c, #d560be85);
+  color: white;
 }
 
-.dark-mode .mode-toggle:hover {
-  color: #ffd700;
-  transform: rotate(-20deg) scale(1.2);
+
+.dark-mode .navbar .auth-buttons a {
+  padding: 8px 16px;
+  background: #64065c;
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none; 
+  transition: all 0.3s ease;
 }
 
-/* ================================== Navbar ================================== */
+/* ================================== Navbar (Light mode) ================================== */
+
+/* light menu */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
   height: 80px;
-  background: linear-gradient(90deg, #e157c8, #65135b);
+  background: linear-gradient(90deg, #8d5910, #c19a6e);
   position: fixed;
   top: 0;
   width: 100%;
@@ -461,29 +379,17 @@ a {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Logo */
-.navbar .nav-logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 1px;
-}
-
 /* Nav Links */
 .navbar .nav-links {
   display: flex;
   gap: 20px;
 }
 
-.navbar .nav-links li {
-  list-style: none;
-}
-
 .navbar .nav-links a {
   padding: 10px 18px;
   border-radius: 25px;
   font-weight: 500;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none; 
   position: relative;
   overflow: hidden;
@@ -507,39 +413,20 @@ a {
   width: 100%;
 }
 
+/* menu on hover */
 .navbar .nav-links a:hover {
-  color: #fffbe6;
+  color: #ffffff;
   transform: scale(1.05);
   z-index: 1;
 }
 
-/* Active Link */
+/* يقعد اللون للمنيو*/
 .navbar .nav-links .active {
   background: rgba(255,255,255,0.2);
   color: #fff;
 }
 
-/* Auth Buttons */
-.navbar .auth-buttons {
-  display: flex;
-  gap: 12px;
-}
-
-.navbar .auth-buttons a {
-  padding: 8px 16px;
-  background: #f59e0b;
-  border-radius: 20px;
-  font-weight: 600;
-  text-decoration: none; /* إزالة underline */
-  transition: all 0.3s ease;
-}
-
-.navbar .auth-buttons a:hover {
-  background: #d97706;
-  transform: scale(1.05);
-}
-
-/* Dark Mode Toggle */
+/* Dark Mode Toggle ايقونه */
 .navbar .mode-toggle {
   background: transparent;
   border: none;
@@ -554,31 +441,11 @@ a {
   color: #ffe600;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px;
-    gap: 10px;
-  }
-  .navbar .nav-links {
-    flex-direction: column;
-    width: 100%;
-  }
-  .navbar .nav-links a {
-    width: 100%;
-    text-align: center;
-  }
-  .navbar .auth-buttons {
-    width: 100%;
-    justify-content: center;
-  }
-}
-/* ================================== Logout Button ================================== */
+/* ================================== Authintication Button ================================== */
+
 .navbar .auth-buttons .btn-logout {
   padding: 8px 16px;
-  background: #f59e0b; 
+  background: #8d5910; 
   color: #fff;
   border-radius: 20px;
   font-weight: 600;
@@ -588,6 +455,33 @@ a {
 }
 
 .navbar .auth-buttons .btn-logout:hover {
-  background: #f59e0b; 
+  background: #c19a6e; 
   transform: scale(1.05);
 }
+/* Auth Buttons */
+.navbar .auth-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.navbar .auth-buttons a {
+  padding: 8px 16px;
+  background: #8d5910;
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none; /* إزالة underline */
+  transition: all 0.3s ease;
+}
+
+.navbar .auth-buttons a:hover {
+  background: #d97706;
+  transform: scale(1.05);
+}
+
+
+/* هذي الدرجات اللي استعملتها انتبهي ياطيييف
+brWon  8d5910
+light browm c19a6e
+baige f5f5dc
+*/

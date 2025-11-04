@@ -10,7 +10,12 @@ import "../../App.css";
 import identtyImg from "../../assets/identty.png";
 import gradImg from "../../assets/grad.png";
 import cvImg from "../../assets/cv.png";
-import passImg from "../../assets/pass.png";
+import passImg from "../../assets/pass.png"; 
+import healthImg from "../../assets/health.png";
+import recomnd1Img from "../../assets/recomnd1.png";
+import driverImg from "../../assets/driver.png";
+import transImg from "../../assets/trans.png";
+
 
 // _________________________________________________________________________________________________________
 
@@ -43,6 +48,10 @@ function PersonalList() {
     if (formatTitle.includes("Graduation")) return gradImg;
     if (formatTitle.includes("My Resume")) return cvImg;
     if (formatTitle.includes("Passport")) return passImg;
+    if (formatTitle.includes("Health")) return healthImg;
+    if (formatTitle.includes("Recommendation")) return recomnd1Img;
+    if (formatTitle.includes("Drivers")) return driverImg;
+    if (formatTitle.includes("Academic")) return transImg;
 
 
     return identtyImg; // you must be gangeit taif !

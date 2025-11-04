@@ -68,7 +68,6 @@ function CertificateForm() {
     }
   };
 
-
   // _____________________________________________________________________________________________________________________________________________________________
   
   const handleSubmit = async (e) => {
@@ -110,69 +109,56 @@ function CertificateForm() {
     }
   };
   // _____________________________________________________________________________________________________________________________________________________________
-  
+ 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      className="main-content"
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45 }}
-      className="container my-5"> 
+      transition={{ duration: 0.6 }}>
 
-{/* _________________________________________________________________ */}
+    {/* ______________________________________________________________________ */}
 
-      <div className="card shadow-sm border-0 mx-auto" style={{maxWidth:900}}>
-        <div className="card-body">
-          <h1 className="mb-4">{certId ? "Update Certificate" : "Add New Certificate "}</h1>
+      <div className="form-container">
+        <h1>{certId ? "Update Certificate" : "Add New Certificate"}</h1>
 
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label className="form-label">Certificate Title</label>
-              <input type="text" name="title"className="form-control"
-                value={formData.title} onChange={handleChange} required/>
-            </div>
-{/* _________________________________________________________________ */}
+        <form onSubmit={handleSubmit}>
+          <label>Certificate Title</label>
+          <input type="text" name="title" value={formData.title}
+            onChange={handleChange} required/>
+    {/* ______________________________________________________________________ */}
 
-            <div className="mb-3">
-              <label className="form-label">Organization</label>
-              <input type="text" name="organization" className="form-control"
-                value={formData.organization} onChange={handleChange} required/>
-            </div>
-{/* _________________________________________________________________ */}
+          <label>Organization</label>
+          <input type="text"
+            name="organization"
+            value={formData.organization}
+            onChange={handleChange}/>
+    {/* ______________________________________________________________________ */}
 
-            <div className="mb-3">
-              <label className="form-label">Date Obtained</label>
-              <input type="date" name="date_obtained" className="form-control"
-                value={formData.date_obtained} onChange={handleChange} required/>
-            </div>
-{/* _________________________________________________________________ */}
+          <label>Date Obtained</label>
+          <input
+            type="date"
+            name="date_obtained"
+            value={formData.date_obtained}
+            onChange={handleChange}/>
+    {/* ______________________________________________________________________ */}
 
-            <div className="mb-3">
-              <label className="form-label">Upload File</label>
-              <input type="file" name="file" className="form-control" onChange={handleChange} />
+          <label>Upload File</label>
+          <input type="file" name="file" onChange={handleChange} />
 
-{/* _________________________________________________________________ */}
+          {fileName && !formData.file && (
+            <p> Current File:{" "}
+              <a href={existingFileUrl}
+                target="_blank" rel="noopener noreferrer">
+                {fileName}</a></p>)}
 
-              {/* To viwe privios file you updated*/}
-              
-              {fileName && !formData.file && (
-                <p className="mt-2"> Current File :{" "}
-                  <a href={existingFileUrl} target="_blank" rel="noopener noreferrer">{fileName}</a></p>)}
-            </div>
-            {formData.file && <p>📁 New File: {formData.file.name}</p>}
+          {formData.file && <p>📁 New File: {formData.file.name}</p>}
 
-{/* _________________________________________________________________ */}
-
-            <div className="mt-4">
-              <button type="submit" className="btn btn-primary">
-                {certId ? "Edit" : "Add"}
-              </button>
-              <Link to="/certificate" className="btn btn-link ms-3">Cancel</Link>
-            </div>
-          </form>
-        </div>
+          <button type="submit">{certId ? "Edit" : "Add"}</button>
+        </form>
       </div>
     </motion.div>
   );
 }
+
 export default CertificateForm;
-// _____________________________________________________________________________________________________________________________________________________________
