@@ -145,11 +145,19 @@ As a user, I want to:
 
 ## Routing Table
 
+### Public Routes
+
 | Path                        | Component         | Description                |
 | --------------------------- | ----------------- | -------------------------- |
 | `/home`                     | Home              | Overview for home page     |
 | `/login`                    | Login             | User login page            |
 | `/signup`                   | Signup            | Create new account for user|
+
+
+### Protected Routes (Require Login)
+
+| Path                        | Component         | Description                |
+| --------------------------- | ----------------- | -------------------------- |
 | `/certificate`              | CertificateList   | List all certificates      |
 | `/certificate/:id`          | CertificateDetail | View single certificate    |
 | `/certificates/new`         | AddCertificate    | Add a new certificate      |
@@ -164,3 +172,25 @@ As a user, I want to:
 | `/courses/:id /delete`      | DeleteGoal        | Delete specific Goal       |
 | `/courses/:id/edit`         | EditGoal          | Edit specific Goal         |
 | `/courses/dashboard`        | Filtter           | Filtter Goals as dashbord  |
+
+---
+
+## 🧪 Testing
+
+All pages tested locally in Chrome & Edge
+
+Token validation and route protection verified
+
+API calls tested using Postman
+
+--- 
+## 🐳 Docker Setup 
+
+# Build and run container
+
+```bash
+docker build -t lifestack-frontend .
+docker run -p 5173:5173 lifestack-frontend
+```
+
+
