@@ -30,22 +30,22 @@ function PersonalList() {
 
   const fetchPersonal = async () => {
     try {
-      const response = await api.get("/personal/");
-      setPersonal(response.data);
+      const response = await api.get("/personal/");     //send GET request to the /personal/ address in Django.
+      setPersonal(response.data);                      //when successful request, the incoming data is saved in the personal folder.
     } catch (error) {
-      console.error("Error fetching Personal Document:", error);
+      console.error("Error fetching Personal Document:", error);   // or if an error printe this error in the console.
     }
   };
 // _________________________________________________________________________________________________________________________________
 
-// static images 
+// All static images 
 
-  const getPersonalImage = (title) => {
+  const getPersonalImage = (title) => {     
 
-    const formatTitle = title.charAt(0).toUpperCase() + title.slice(1);
-
-    if (formatTitle.includes("Identty")) return identtyImg;
-    if (formatTitle.includes("Graduation")) return gradImg;
+    const formatTitle = title.charAt(0).toUpperCase() + title.slice(1);   // this function receives the document title like Passport..It capitalizes the first letter.
+                                                                            
+    if (formatTitle.includes("Identty")) return identtyImg;              // then checks if the title includes certain keywords.
+    if (formatTitle.includes("Graduation")) return gradImg;             // depending on the title, it returns the right image.
     if (formatTitle.includes("My Resume")) return cvImg;
     if (formatTitle.includes("Passport")) return passImg;
     if (formatTitle.includes("Health")) return healthImg;
@@ -54,19 +54,19 @@ function PersonalList() {
     if (formatTitle.includes("Academic")) return transImg;
 
 
-    return identtyImg; // you must be gangeit taif !
+    return identtyImg; // otherwise if no match is found, it returns the (identtyImg) as the default.
   };
 
 // _________________________________________________________________________________________________________________________________
 
   const handleDelete = async (id) => {
 
-    if (window.confirm("Are you sure you want to delete this Document ❓")) {
+    if (window.confirm("Are you sure you want to delete this Document ❓")) {   //when the user clicks delete a confirmation message appears
       try {
-        await api.delete(`/personal/${id}/`);
-        fetchPersonal();
+        await api.delete(`/personal/${id}/`);     //if you confirm that! the app sends a DELETE request to the backend.
+        fetchPersonal();                         //to refresh the list after deleting
       } catch (error) {
-        console.error("Error Deleting Document:", error);
+        console.error("Error Deleting Document:", error);  // or if an error printe this error in the console.
       }
     }
   };
