@@ -5,8 +5,10 @@ This is the **frontend** of the LifeStack full stack web application.
 Built with **React (Vite)**, it connects to the Django REST backend to manage user authentication and CRUD operations for certificates, courses, and personal documents.
 
 ---
-## 💡 Project Idea
+## 💡 Platform Idea :
+
 This project is a personal digital platform that enables users to securely organize and store their certificates, achievements, and future goals in one place. Unlike traditional cloud services, it offers a personalized dashboard to track progress, plan future courses, and access all documents anytime, anywhere in PDF format.
+
 ---
 
 ## 🚀 Tech Stack
