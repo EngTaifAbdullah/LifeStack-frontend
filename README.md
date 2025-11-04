@@ -118,7 +118,6 @@ src/
 
 ## User Story
 
-
 As a user, I want to:
 
 1. Create my own account and be able to log in securely.
@@ -186,16 +185,16 @@ docker run -p 5173:5173 lifestack-frontend
 
 ## 📊 Requirements
 
-✅ 3 Related Django Models
-✅ Full CRUD Functionality (3 models)
-✅ JWT Authentication
-✅ RESTful API (DRF)
-✅ PostgreSQL Integration
-✅ Dockerized Backend
+- ✅ 3 Related Django Models
+- ✅ Full CRUD Functionality (3 models)
+- ✅ JWT Authentication
+- ✅ RESTful API (DRF)
+- ✅ PostgreSQL Integration
+- ✅ Dockerized Backend
 
 ---
 ## 👨‍💻 Developer
-#### Taif Abdullah AlAnzi
+### Taif Abdullah AlAnzi
 
 - GitHub: @EngTaifAbdullah
 - Email: Eng.taifabdullah@gmail.com 
