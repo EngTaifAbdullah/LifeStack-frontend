@@ -68,6 +68,12 @@ npm install
 ```bash
 npm run dev
 ```
+4. **Production build**
+```bash
+npm run build
+```
+
+
 ---
 ## 📁 Project Structure
 ```
