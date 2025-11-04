@@ -179,6 +179,18 @@ As a user, I want to:
 | `/courses/dashboard`        | Filtter           | Filtter Goals as dashbord  |
 
 ---
+## Communication between Frontend & Backend
+ ``` 
+ #🔄 Frontend ↔ Backend Communication
+All CRUD operations and authentication requests are handled using **Axios** through RESTful APIs.
+The frontend consumes endpoints such as:
+- `/api/token/` → For user authentication (JWT)
+- `/api/certificates/` → For certificate management
+- `/api/courses/` → For user goals
+- `/api/personal/` → For personal documents ``` 
+
+
+
 
 ## 🧪 Testing
 
