@@ -11,15 +11,15 @@ This project is a personal digital platform that enables users to securely organ
 ---
 
 ## 🚀 Tech Stack
-- React 19.1
-- Vite (To Build Tools)
-- React Router DOM
-- Axios 1.13
-- Bootstrap CSS 5.3
-- Framer Motion (Animations) 12.24
-- JWT Decode 3.1.2
-- Context API
-- Docker
+- **React** 19.1
+- **Vite** (To Build Tools)
+- **React Router DOM**
+- **Axios** 1.13
+- **Bootstrap** CSS 5.3
+- **Framer Motion (Animations)** 12.24
+- **JWT Decode** 3.1.2
+- **Context API**
+- **Docker**
 
 ---
 
@@ -48,3 +48,15 @@ This project is a personal digital platform that enables users to securely organ
 - **API Documentation** [https://github.com/EngTaifAbdullah/LifeStack-backend/blob/main/README.md]
 
 ---
+
+## ⚙️ Installation & Setup
+
+# 1. Clone the repository
+```git clone https://github.com/EngTaifAbdullah/LifeStack-frontend.git
+cd LifeStack-frontend```
+
+# 2. Install dependencies
+```npm install```
+
+# 3. Start the development server
+```npm run dev```
