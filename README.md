@@ -186,7 +186,7 @@ API calls tested using Postman
 --- 
 ## 🐳 Docker Setup 
 
-# Build and run container
+#### Build and run container
 
 ```bash
 docker build -t lifestack-frontend .
