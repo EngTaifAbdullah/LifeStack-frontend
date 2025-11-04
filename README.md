@@ -142,3 +142,25 @@ As a user, I want to:
 10. As an unregistered user, I can only see the Home & About page until I decide to register.
 
 ---
+
+## Routing Table
+
+| Path                        | Component         | Description                |
+| --------------------------- | ----------------- | -------------------------- |
+| `/home`                     | Home              | Overview for home page     |
+| `/login`                    | Login             | User login page            |
+| `/signup`                   | Signup            | Create new account for user|
+| `/certificate`              | CertificateList   | List all certificates      |
+| `/certificate/:id`          | CertificateDetail | View single certificate    |
+| `/certificates/new`         | AddCertificate    | Add a new certificate      |
+| `/certificates/:id /delete` | DeleteCertificate | Delete specific certificate|
+| `/certificates/:id/edit`    | EditCertificate   | Edit specific certificate  |
+| `/personal`                 | PersonalList      | List of personal documents |
+| `/personal/new`             | AddPersonalDoc    | Add a new Personal document|
+| `/personal/:id/edit`        | EditPersonalDoc   | Edit specific Personal docs|
+| `/personal/:id /delete`     | DeletePersonalDoc | Delete specific Personal   |
+| `/courses`                  | CoursesList       | List all courses (Goals)   |
+| `/courses/new`              | AddGoal           | Add a new future Goal      |
+| `/courses/:id /delete`      | DeleteGoal        | Delete specific Goal       |
+| `/courses/:id/edit`         | EditGoal          | Edit specific Goal         |
+| `/courses/dashboard`        | Filtter           | Filtter Goals as dashbord  |
