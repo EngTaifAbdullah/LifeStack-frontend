@@ -1,16 +1,50 @@
-# React + Vite
+# LifeStack Frontend Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
+This is the **frontend** of the LifeStack full stack web application.  
+Built with **React (Vite)**, it connects to the Django REST backend to manage user authentication and CRUD operations for certificates, courses, and personal documents.
 
-Currently, two official plugins are available:
+---
+## 💡 Project Idea
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a personal digital platform that enables users to securely organize and store their certificates, achievements, and future goals in one place. Unlike traditional cloud services, it offers a personalized dashboard to track progress, plan future courses, and access all documents anytime, anywhere in PDF format.
+---
 
-## React Compiler
+## 🚀 Tech Stack
+- React 19.1
+- Vite (To Build Tools)
+- React Router DOM
+- Axios 1.13
+- Bootstrap CSS 5.3
+- Framer Motion (Animations) 12.24
+- JWT Decode 3.1.2
+- Context API
+- Docker
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
+**For User :**
+- User Signup / Login / Logout (JWT Authentication)
+- CRUD operations for:
+  - Certificates
+  - Courses (Goals)
+  - Personal Documents
+- Filtering Goals based on Category  
+- Light/Dark Mode UI
+- Responsive and modern design
+- Error handling for failed API calls
+- Dynamic routing with React Router
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔗 Backend 
+- **The frontend communicates with the Django REST API located at**: [http://localhost:8000/]
+
+- **Backend Repository**: [https://github.com/EngTaifAbdullah/LifeStack-backend]
+
+- **Live Demo**:
+
+- **API Documentation** [https://github.com/EngTaifAbdullah/LifeStack-backend/blob/main/README.md]
+
+---
