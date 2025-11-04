@@ -68,3 +68,20 @@ npm install
 ```bash
 npm run dev
 ```
+---
+## Project Structure
+```
+LifeStack-frontend/
+│
+├── src/
+│   ├── api/
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── pages/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── public/
+│
+└── package.json```
