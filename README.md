@@ -177,11 +177,11 @@ As a user, I want to:
 
 ## 🧪 Testing
 
-All pages tested locally in Chrome & Edge
+- All pages tested locally in Chrome & Edge
 
-Token validation and route protection verified
+- Token validation and route protection verified
 
-API calls tested using Postman
+- API calls tested using Postman
 
 --- 
 ## 🐳 Docker Setup 
@@ -193,4 +193,20 @@ docker build -t lifestack-frontend .
 docker run -p 5173:5173 lifestack-frontend
 ```
 
+---
 
+## 📊 Requirements
+
+✅ 3 Related Django Models
+✅ Full CRUD Functionality (3 models)
+✅ JWT Authentication
+✅ RESTful API (DRF)
+✅ PostgreSQL Integration
+✅ Dockerized Backend
+
+---
+## 👨‍💻 Developer
+#### Taif Abdullah AlAnzi
+
+- GitHub: @EngTaifAbdullah
+- Email: Eng.taifabdullah@gmail.com 
