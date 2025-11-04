@@ -1,8 +1,10 @@
-# LifeStack Web Application - Frontend
+# 📑 LifeStack Web Application - Frontend
 
 ## Project Overview
 This is the **frontend** of the LifeStack full stack web application.  
 Built with **React (Vite)**, it connects to the Django REST backend to manage user authentication and CRUD operations for certificates, courses, and personal documents.
+![LifeStack Preview](./src/assets/preview.png)
+![LifeStack Preview](./src/assets/login.png)
 
 ---
 ## 💡 Platform Idea :
@@ -73,10 +75,12 @@ npm run dev
 npm run build
 ```
 
-5. **Environment variables (.env)**
+5. **Environment variables ```.env```**
 ```bash
 VITE_API_URL=http://127.0.0.1:8000/api
+
 VITE_APP_NAME=LifeStack
+VITE_APP_URL=http://localhost:5173
 ```
 
 ---
