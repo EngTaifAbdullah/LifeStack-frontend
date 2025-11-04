@@ -73,6 +73,11 @@ npm run dev
 npm run build
 ```
 
+5. **Environment variables (.env)**
+```bash
+VITE_API_URL=http://127.0.0.1:8000/api
+VITE_APP_NAME=LifeStack
+```
 
 ---
 ## 📁 Project Structure
