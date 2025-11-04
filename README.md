@@ -72,16 +72,44 @@ npm run dev
 ## Project Structure
 ```
 LifeStack-frontend/
-│
-├── src/
-│   ├── api/
-│   ├── assets/
-│   ├── components/
-│   ├── context/
-│   ├── pages/
-│   ├── App.jsx
-│   └── main.jsx
-│
-├── public/
-│
-└── package.json```
+ │
+src/
+ ├── assets/
+ │    └── (All Certificates,Images)
+ │
+ ├── components/
+ │   ├── Auth/
+ │   │    ├── Auth.css
+ │   │    ├── Login.jsx
+ │   │    ├── Logout.jsx
+ │   │    ├── ProtectedRoute.jsx
+ │   │    └── Signup.jsx
+ │   │
+ │   ├── Certificates/
+ │   │    ├── CertificateForm.jsx
+ │   │    ├── CertificateList.jsx
+ │   │    └── CertificateView.jsx
+ │   │
+ │   ├── Courses/
+ │   │    ├── CourseForm.jsx
+ │   │    ├── CourseList.jsx
+ │   │    └── DashboardCourses.jsx
+ │   │
+ │   ├── Documents/
+ │   │    ├── PersonalForm.jsx
+ │   │    ├── PersonalList.jsx
+ │   │    └── PersonalView.jsx
+ │   │
+ │   ├── Layout/
+ │   │    ├── NavBar.jsx
+ │   │    ├── NavBar.css
+ │   │    └── Footer.jsx
+ │   │
+ │   └── Home/
+ │        ├── HomePage.jsx
+ │        └── HomePage.css     
+ │
+ ├── App.jsx                  
+ ├── main.jsx                 
+ ├── App.css                   
+ └── index.html                
