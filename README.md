@@ -1,4 +1,4 @@
-# LifeStack Frontend Web Application
+# LifeStack Web Application - Frontend
 
 ## Project Overview
 This is the **frontend** of the LifeStack full stack web application.  
@@ -6,7 +6,6 @@ Built with **React (Vite)**, it connects to the Django REST backend to manage us
 
 ---
 ## 💡 Project Idea
-
 This project is a personal digital platform that enables users to securely organize and store their certificates, achievements, and future goals in one place. Unlike traditional cloud services, it offers a personalized dashboard to track progress, plan future courses, and access all documents anytime, anywhere in PDF format.
 ---
 
@@ -49,14 +48,21 @@ This project is a personal digital platform that enables users to securely organ
 
 ---
 
-## ⚙️ Installation & Setup
+### ⚙️ Installation & Setup
 
-# 1. Clone the repository
-```git clone https://github.com/EngTaifAbdullah/LifeStack-frontend.git
-cd LifeStack-frontend```
+1. **Clone the repository**
 
-# 2. Install dependencies
-```npm install```
+```bash
+git clone https://github.com/EngTaifAbdullah/LifeStack-frontend.git
+cd LifeStack-frontend
+```
 
-# 3. Start the development server
-```npm run dev```
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Start the development server**
+```bash
+npm run dev
+```
