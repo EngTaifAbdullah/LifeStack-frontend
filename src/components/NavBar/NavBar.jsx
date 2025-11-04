@@ -94,7 +94,7 @@ function Navbar() {
       transition={{ duration: 0.8, ease: "easeOut" }}>
 
         <span style={{
-            fontWeight: "bold", fontSize: "22px",
+            fontWeight: "bold", fontSize: "30px",
             color: "#fff", textShadow: "0 0 10px rgba(243, 205, 52, 0.81)",
           }}>LifeStack
         </span>

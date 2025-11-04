@@ -308,7 +308,7 @@ body.dark-mode {
 /* دارك منيو */
 .dark-mode .navbar {
   background: linear-gradient(90deg, #64065c, #0f2c2e,#75075f85,#300228);
-  box-shadow: 0 8px 20px rgba(159, 15, 145, 0.703), 0 0 80px rgba(123,44,255,0.18);
+  box-shadow: 0 8px 20px rgba(255, 55, 252, 0.276), 0 0 80px rgba(123,44,255,0.18);
 }
 .dark-mode .nav-links a {
   color: #ffffff;
@@ -347,7 +347,6 @@ body.dark-mode {
   background: linear-gradient(90deg, #64065c, #d560be85);
   color: white;
 }
-
 
 .dark-mode .navbar .auth-buttons a {
   padding: 8px 16px;
