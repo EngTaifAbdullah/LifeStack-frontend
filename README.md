@@ -69,7 +69,7 @@ npm install
 npm run dev
 ```
 ---
-## Project Structure
+## 📁 Project Structure
 ```
 LifeStack-frontend/
  │
@@ -102,8 +102,7 @@ src/
  │   │
  │   ├── Layout/
  │   │    ├── NavBar.jsx
- │   │    ├── NavBar.css
- │   │    └── Footer.jsx
+ │   │    └── NavBar.css
  │   │
  │   └── Home/
  │        ├── HomePage.jsx
@@ -113,3 +112,32 @@ src/
  ├── main.jsx                 
  ├── App.css                   
  └── index.html                
+
+---
+
+## User Story
+
+
+As a user, I want to:
+
+1. Create my own account and be able to log in securely.
+
+2. Upload my certificates and add their details so I can access them later.
+
+3. Download my certificates in PDF format to my personal device.
+
+4. Add future goals or courses that I plan to take in order to track my progress.
+
+5. Edit the information of any certificate or course I have added.
+
+6. Delete a certificate or course that I no longer need.
+
+7. View all my achievements in an organized way, categorized by type (through a dashboard).
+
+8. Search or filter to easily find a specific certificate or course.
+
+9. Access my personal documents in a dedicated section of the website.
+
+10. As an unregistered user, I can only see the Home & About page until I decide to register.
+
+---
