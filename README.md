@@ -84,6 +84,14 @@ VITE_APP_NAME=LifeStack
 VITE_APP_URL=http://localhost:5173
 ```
 
+
+---
+
+## 📊 ERD Relationships
+
+![LifeStack ERD](./src/assets/ERD.png)
+
+
 ---
 ## 📁 Project Structure
 ```
