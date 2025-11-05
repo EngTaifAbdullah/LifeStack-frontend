@@ -61,7 +61,7 @@ function PersonalList() {
 
   const handleDelete = async (id) => {
 
-    if (window.confirm("Are you sure you want to delete this Document ❓")) {   //when the user clicks delete a confirmation message appears
+    if (window.confirm("Are you sure you want to delete this Document ❓")) {   // when the user clicks delete a confirmation message appears
       try {
         await api.delete(`/personal/${id}/`);     //if you confirm that! the app sends a DELETE request to the backend.
         fetchPersonal();                         //to refresh the list after deleting
