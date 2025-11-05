@@ -11,8 +11,10 @@ Built with **React (Vite)**, it connects to the Django REST backend to manage us
 
 This project is a personal digital platform that enables users to securely organize and store their certificates, achievements, and future goals in one place. Unlike traditional cloud services, it offers a personalized dashboard to track progress, plan future courses, and access all documents anytime, anywhere in PDF format.
 
+
 ![LifeStack Preview](./src/assets/preview.png)
 ---
+
 
 ## 🚀 Tech Stack
 - **React** 19.1
@@ -27,7 +29,7 @@ This project is a personal digital platform that enables users to securely organ
 
 ---
 
-## Features
+## ✨ Features
 **For User :**
 - User Signup / Login / Logout (JWT Authentication)
 - CRUD operations for:
@@ -42,12 +44,12 @@ This project is a personal digital platform that enables users to securely organ
 
 ---
 
-## 🔗 Backend 
+### 🔗 Backend 
 - **The frontend communicates with the Django REST API located at**: ```http://localhost:8000```
 
 - **Backend Repository**: [https://github.com/EngTaifAbdullah/LifeStack-backend]
 
-- **Live Demo**:
+- **Live Demo**: SOON !
 
 - **API Documentation** [https://github.com/EngTaifAbdullah/LifeStack-backend/blob/main/README.md]
 
@@ -71,6 +73,7 @@ npm install
 ```bash
 npm run dev
 ```
+
 4. **Production build**
 ```bash
 npm run build
@@ -83,14 +86,11 @@ VITE_API_URL=http://127.0.0.1:8000/api
 VITE_APP_NAME=LifeStack
 VITE_APP_URL=http://localhost:5173
 ```
-
-
 ---
 
 ## 📊 ERD Relationships
 
 ![LifeStack ERD](./src/assets/ERD.png)
-
 
 ---
 ## 📁 Project Structure
@@ -119,12 +119,12 @@ src/
  │   │    ├── CourseList.jsx
  │   │    └── DashboardCourses.jsx
  │   │
- │   ├── Documents/
+ │   ├── PersonalDocuments/
  │   │    ├── PersonalForm.jsx
  │   │    ├── PersonalList.jsx
  │   │    └── PersonalView.jsx
  │   │
- │   ├── Layout/
+ │   ├── NavBar/
  │   │    ├── NavBar.jsx
  │   │    └── NavBar.css
  │   │
@@ -201,8 +201,6 @@ The frontend consumes endpoints such as:
 - `/api/personal/` → For personal documents`
 
 ---
-
----
 ## 🧪 Testing
 
 - All pages tested locally in Chrome & Edge
@@ -220,6 +218,18 @@ docker run -p 5173:5173 lifestack-frontend
 ```
 
 ---
+## 🧊 IceBox (Future Features)
+
+ 1. Add User Profile Customization
+ 2. Add Notifications & Reminders
+ 3. Add Progress Tracking to view completed and in-progress goals
+ 4. Add File Sharing Feature
+ 5. Add Security Features in Personal Documents
+ 6. Integrate Cloud Backup Services
+ 7. Add Mobile App Version
+ 8. Add Multi-language Support
+
+---
 
 ## 📊 Requirements
 
@@ -229,6 +239,16 @@ docker run -p 5173:5173 lifestack-frontend
 - ✅ RESTful API (DRF)
 - ✅ PostgreSQL Integration
 - ✅ Dockerized Backend
+- 
+
+---
+## 💡 Lessons Learned
+
+- Building full authentication using JWT.
+- Managing API integration between React and Django.
+- Handling CORS, routes, and Docker containers.
+- Implementing CRUD logic efficiently.
+- Designing a visually appealing and responsive UI with animations.
 
 ---
 ## 👨‍💻 Developer
